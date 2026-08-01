@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sari &amp; Ploy: After School Agents | An Original Series by MXVDXN</title>
+  <meta name="description" content="Students by cover, agents by duty. Sari & Ploy: After School Agents is an original AI action series set across Jakarta and Bangkok, created by Dan Pradana under MXVDXN.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       SARI & PLOY / AFTER SCHOOL AGENTS
+       Art direction: independent film press kit, editorial issue.
+       Ink black, warm off white paper, one signal red.
+       ============================================================ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      /* palette */
+      --paper:#f4f1e9;
+      --paper-2:#eae4d8;
+      --black:#0d0d0e;
+      --red:#dc2b16;
+
+      /* legacy token names kept so inline styles in the markup stay wired */
+      --bg:#f4f1e9;
+      --surface:#eae4d8;
+      --surface-2:#efeae0;
+      --line:#cdc5b6;
+      --line-soft:#ded8ca;
+      --ink:#131315;
+      --dim:#5b5851;
+      --faint:#6f6a61;
+      --accent:#dc2b16;
+      --accent-deep:#0d0d0e;
+      --link:#dc2b16;
+      --red-token:#dc2b16;
+      --gold:#dc2b16;
+
+      --display:'Anton',Impact,'Arial Narrow',sans-serif;
+      --body:'Chakra Petch',Arial,Helvetica,sans-serif;
+      --mono:'Space Mono',ui-monospace,Menlo,monospace;
+
+      --pad:clamp(14px,2.6vw,32px);
+      --gut:clamp(20px,4.4vw,68px);
+      --frame:1360px;
+      --edge:max(var(--gut),calc((100% - var(--frame))/2));
+      --nav-h:54px;
+    }
+
+    /* dark bands invert the tokens so inline var() usages follow along */
+    .band-dark{
+      background:var(--black);
+      color:#f2efe8;
+      --bg:#0d0d0e;
+      --surface:#161718;
+      --surface-2:#1d1e20;
+      --line:rgba(242,239,232,.20);
+      --line-soft:rgba(242,239,232,.11);
+      --ink:#f2efe8;
+      --dim:#a49f96;
+      --faint:#7c766e;
+    }
+
+    html{background:var(--paper);scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 10px);-webkit-text-size-adjust:100%}
+    body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    body.player-open{overflow:hidden}
+    a{color:inherit}
+    button{font:inherit;color:inherit}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--red);color:var(--paper)}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+    .mono{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .mono-sm{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+    .accent{color:var(--red)}
+
+    /* ============================================================
+       OPENING HERO / LOCKED, DO NOT ALTER
+       ============================================================ */
+    .opening{
+      position:relative;
+      width:100%;
+      height:100vh;
+      height:100svh;
+      min-height:560px;
+      overflow:hidden;
+      isolation:isolate;
+      background:#050607;
+    }
+    .opening-video{
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(.92) contrast(1.03) brightness(.82);
+    }
+    .opening::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background:rgba(0,0,0,.08);
+      pointer-events:none;
+    }
+    .opening-scroll{
+      position:absolute;
+      top:50%;
+      left:50%;
+      z-index:1;
+      transform:translate(-50%,-50%);
+      color:rgba(255,255,255,.6);
+      font-family:var(--mono);
+      font-size:10px;
+      font-weight:400;
+      letter-spacing:.18em;
+      white-space:nowrap;
+      text-transform:uppercase;
+      text-shadow:0 1px 10px rgba(0,0,0,.5);
+    }
+
+    /* ============================================================
+       MASTHEAD LINE + SIGNAL NAV
+       ============================================================ */
+    .breadcrumb{
+      display:flex;align-items:center;flex-wrap:wrap;gap:9px;
+      padding:18px var(--edge) 15px;
+      border:0;border-bottom:1px solid var(--line);
+      background:var(--paper);
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+    }
+    .breadcrumb a{text-decoration:none;transition:color .16s}
+    .breadcrumb a:hover{color:var(--red)}
+    .breadcrumb .sep{color:var(--line)}
+    .breadcrumb .here{color:var(--ink)}
+
+    .rail{
+      position:sticky;top:0;z-index:80;
+      display:flex;align-items:center;gap:clamp(10px,1.8vw,26px);
+      min-height:var(--nav-h);height:var(--nav-h);
+      padding:0 var(--edge);
+      background:var(--black);
+      border:0;border-bottom:1px solid rgba(242,239,232,.16);
+    }
+    .rail h4{
+      flex:0 0 auto;margin:0;
+      font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+      color:rgba(242,239,232,.4);
+    }
+    .toc{
+      display:flex;align-items:center;flex:1 1 auto;min-width:0;
+      list-style:none;border:0;
+      overflow-x:auto;overflow-y:hidden;
+      scrollbar-width:none;-ms-overflow-style:none;
+    }
+    .toc::-webkit-scrollbar{display:none}
+    .toc li{flex:0 0 auto}
+    .toc li a{
+      display:inline-flex;align-items:center;gap:7px;
+      height:var(--nav-h);margin:0;padding:0 clamp(10px,1.1vw,17px);
+      border:0;text-decoration:none;white-space:nowrap;
+      font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+      color:rgba(242,239,232,.66);
+      transition:color .16s,background .16s;
+    }
+    .toc li a:hover{color:#fff;background:rgba(242,239,232,.07)}
+    .toc li a.is-current{color:#fff;background:rgba(220,43,22,.16);box-shadow:inset 0 -2px 0 var(--red)}
+
+    /* ============================================================
+       PAGE FRAME
+       ============================================================ */
+    .wiki{display:block;max-width:none;margin:0}
+    .article{display:block;min-width:0;padding:0}
+    .infobox{position:static;padding:0;border:0}
+
+    .sec{position:relative;padding:clamp(56px,8vw,124px) var(--edge);scroll-margin-top:calc(var(--nav-h) + 8px)}
+
+    /* ============================================================
+       SECTION HEADS / a different composition per section
+       ============================================================ */
+    .sec-h{display:block;position:relative;padding:0;margin:0 0 clamp(30px,4.4vw,58px);border:0}
+    .sec-h h2{font-family:var(--display);font-size:clamp(38px,6vw,86px);line-height:.86;letter-spacing:-.005em;text-transform:uppercase}
+    .sec-h .cjk{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+    .sec-h .edit{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+
+    /* The World: label above, headline below a heavy rule */
+    #world .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:11px;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+    #world .sec-h .cjk{order:-1}
+    #world .sec-h h2{font-size:clamp(44px,8.4vw,132px);letter-spacing:-.014em}
+
+    /* Main Agents: red label, no rule, the largest headline on paper */
+    #characters .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+    #characters .sec-h .cjk{order:-1;color:var(--red)}
+    #characters .sec-h h2{font-size:clamp(50px,10vw,152px);letter-spacing:-.02em}
+
+    /* G.S.I.: ruled institutional band */
+    #gsi .sec-h{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    #gsi .sec-h h2{font-size:clamp(24px,3.4vw,50px);letter-spacing:.005em}
+
+    /* Supporting Cast: one baseline, heavy rule */
+    #supporting .sec-h{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+    #supporting .sec-h h2{font-size:clamp(34px,5vw,72px)}
+    #supporting .sec-h .cjk{padding-bottom:8px}
+
+    /* Threat Index: headline first, label underneath */
+    #threats .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+    #threats .sec-h h2{font-size:clamp(46px,8.6vw,132px);letter-spacing:-.018em}
+    #threats .sec-h .cjk{margin-top:17px;color:rgba(242,239,232,.5)}
+
+    /* Watch Episodes: utility marks stacked at the right edge */
+    #episodes .sec-h{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:6px 20px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+    #episodes .sec-h h2{grid-column:1;grid-row:1/span 2;align-self:end;font-size:clamp(40px,7vw,104px);letter-spacing:-.012em}
+    #episodes .sec-h .cjk{grid-column:2;grid-row:1;text-align:right}
+    #episodes .sec-h .edit{grid-column:2;grid-row:2;justify-self:end;align-self:end;padding-bottom:8px}
+
+    /* Studio: deliberately quiet */
+    #studio .sec-h{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 12px;margin-bottom:0}
+    #studio .sec-h h2{font-size:clamp(20px,2.4vw,32px);letter-spacing:.03em}
+
+    /* Legal: smallest type on the page */
+    #legal .sec-h{display:flex;align-items:baseline;gap:12px;padding-top:20px;border-top:1px solid var(--line);margin-bottom:0}
+    #legal .sec-h h2{font-size:clamp(15px,1.6vw,19px);letter-spacing:.16em}
+
+    /* ============================================================
+       01 / OPENING CREDITS
+       ============================================================ */
+    #home{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,300px);
+      column-gap:clamp(28px,4vw,72px);
+      row-gap:clamp(34px,4.6vw,62px);
+      align-items:start;
+      padding-top:clamp(50px,7vw,98px)!important;
+    }
+    .art-head{grid-column:1/-1;grid-row:1;margin:0;padding:0;border:0}
+    .art-kicker{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
+    .art-title{
+      margin-top:clamp(14px,2vw,26px);
+      font-family:var(--display);font-size:clamp(32px,9vw,158px);line-height:.83;letter-spacing:-.018em;text-transform:uppercase;
+      hyphens:none;
+    }
+    .art-sub{
+      max-width:26ch;text-wrap:balance;margin-top:clamp(16px,2.2vw,28px);
+      font-family:var(--body);font-size:clamp(16px,1.5vw,23px);font-weight:500;line-height:1.4;color:var(--ink);
+    }
+    .tag-row{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:clamp(20px,2.6vw,34px);padding-top:13px;border-top:1px solid var(--line)}
+    .tag{
+      padding:0 13px 0 0;margin-right:13px;border:0;border-right:1px solid var(--line);
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);line-height:1.9;
+    }
+    .tag:last-child{margin-right:0;padding-right:0;border-right:0}
+    .tag.on{color:var(--red)}
+
+    /* the series data, set as a film credit sheet */
+    .infobox{grid-column:1/-1;grid-row:2;margin:0}
+    .ib{
+      display:grid;
+      grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+      column-gap:clamp(24px,3.6vw,60px);
+      align-items:start;border:0;background:none;
+    }
+    .ib>*{min-width:0}
+    .ib-still,.ib-credits{min-width:0}
+    .ib-media{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;background:var(--paper-2)}
+    .ib-media img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center}
+    .ib-cap{padding:11px 0 0;border:0;text-align:left;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+    .ib-title{padding:0 0 12px;background:none;border:0;text-align:left;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
+    .ib-section{padding:16px 0 9px;background:none;border:0;border-top:1px solid var(--line);font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+    .ib dl{margin:0}
+    .ib .ibrow{display:grid;grid-template-columns:36% minmax(0,1fr);gap:10px;padding:0;border:0;border-bottom:1px solid var(--line-soft)}
+    .ib .ibrow:last-child{border-bottom:0}
+    .ib dt{padding:10px 0;border:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+    .ib dd{padding:10px 0;font-family:var(--display);font-weight:400;font-size:clamp(15px,1.35vw,20px);line-height:1.2;letter-spacing:.015em;text-transform:uppercase;color:var(--ink)}
+    .ib dd.hot{font-family:var(--display);font-size:clamp(15px,1.35vw,20px);text-transform:uppercase;color:var(--red)}
+    .ib-cta{
+      justify-self:start;display:inline-flex;align-items:center;
+      margin:clamp(20px,2.4vw,30px) 0 0;padding:15px 28px;
+      background:var(--red);color:#fff;border:0;
+      font-family:var(--display);font-size:16px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+      transition:background .18s,color .18s;
+    }
+    .ib-cta:hover{background:var(--black);color:#fff;transform:none}
+
+    .notice{
+      grid-column:1/-1;grid-row:3;
+      display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;
+      margin:0;padding:18px 0 0;background:none;border:0;border-top:2px solid var(--red);
+    }
+    .notice .ico{padding-top:2px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--red)}
+    .notice p{max-width:72ch;font-size:14.5px;line-height:1.66;color:var(--dim)}
+    .notice p b{color:var(--ink);font-weight:700}
+
+    .prose{font-size:clamp(15px,1.05vw,17px);line-height:1.78;color:var(--ink)}
+    .prose p{margin-bottom:1.1em}
+    .prose p:last-child{margin-bottom:0}
+    #home>.prose{grid-column:1;grid-row:4;max-width:60ch;font-size:clamp(16px,1.35vw,21px);line-height:1.62}
+    #home>.prose .first::first-letter{float:left;margin:.06em .1em 0 0;font-family:var(--display);font-size:3.5em;line-height:.76;color:var(--red)}
+    .rail-note{grid-column:2;grid-row:4;align-self:start;margin:0;padding:17px 0 0;background:none;border:0;border-top:1px solid var(--line)}
+    .rail-note .mono-sm{display:block;margin-bottom:9px;font-size:9.5px;letter-spacing:.24em;color:var(--red)}
+    .rail-note p{font-size:12.5px;line-height:1.68;color:var(--dim)}
+
+    /* ============================================================
+       02 / THE WORLD, visual essay
+       ============================================================ */
+    .figure{margin:0;border:0;background:none}
+    .figure img{width:100%;display:block}
+    .figure.sq img{aspect-ratio:auto}
+    .figure.contain{padding:0}
+    .figcap{display:flex;justify-content:space-between;gap:12px;padding:11px 0 0;border:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+
+    #world .split{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(0,1fr);column-gap:clamp(28px,4.4vw,80px);align-items:start}
+    #world .figure{grid-column:1;grid-row:1}
+    #world .figure img{width:100%;height:auto;max-height:clamp(400px,62vw,760px);object-fit:cover;object-position:center}
+    #world .prose{grid-column:2;grid-row:1;max-width:44ch;padding-top:clamp(0px,5.5vw,104px)}
+    #world .prose p:first-child{font-size:clamp(18px,1.75vw,27px);line-height:1.42;letter-spacing:-.005em;margin-bottom:1em}
+
+    /* ============================================================
+       03 / MAIN AGENTS, full width profile spreads
+       ============================================================ */
+    #characters>.prose{max-width:none;margin-bottom:clamp(56px,8vw,120px)!important;columns:2;column-gap:clamp(30px,4.4vw,76px);orphans:2;widows:2}
+    #characters>.prose p{margin-bottom:1.05em}
+
+    .char-entry{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);column-gap:clamp(28px,4.4vw,80px);align-items:center;padding:0;border:0}
+    .char-entry+.char-entry{margin-top:clamp(56px,8.5vw,140px)}
+    .char-figure{margin:0;border:0;background:none}
+    .char-figure img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center}
+    .char-figure .cap{display:flex;justify-content:space-between;gap:10px;padding:11px 0 0;border:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+    .char-name{font-family:var(--display);font-size:clamp(64px,12.5vw,212px);line-height:.78;letter-spacing:-.025em;text-transform:uppercase}
+    .char-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:clamp(18px,2.2vw,30px) 0 clamp(18px,2.2vw,30px);padding:11px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .char-meta .m{padding:0 12px 0 0;margin-right:12px;border:0;border-right:1px solid var(--line);font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);line-height:1.85}
+    .char-meta .m:last-child{margin-right:0;padding-right:0;border-right:0}
+    .char-meta .m.key{color:var(--red)}
+    .char-entry p.bio{max-width:52ch;font-size:clamp(14.5px,1.05vw,16.5px);line-height:1.72;color:var(--ink)}
+    .char-entry p.bio+p.bio{margin-top:1em}
+    /* second agent mirrors the spread */
+    #characters .char-entry:last-of-type{grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);align-items:end}
+    #characters .char-entry:last-of-type .char-figure{grid-column:2;grid-row:1}
+    #characters .char-entry:last-of-type>div{grid-column:1;grid-row:1}
+
+    /* ============================================================
+       04 / G.S.I., institutional file
+       ============================================================ */
+    #gsi .split{display:grid;grid-template-columns:minmax(0,1.34fr) minmax(0,1fr);column-gap:clamp(28px,4.4vw,80px);align-items:start}
+    #gsi .prose{max-width:58ch;color:#f2efe8}
+    #gsi .prose p:first-child{font-size:clamp(18px,1.7vw,26px);line-height:1.44;letter-spacing:-.005em;color:#f2efe8}
+    #gsi .prose p+p{color:var(--dim)}
+    #gsi .figure{display:block;align-self:start;padding:0!important;border:0!important;background:none!important}
+    #gsi .figure img{width:100%;max-width:none;margin:0;aspect-ratio:1/1;object-fit:cover;object-position:center}
+    #gsi .figcap{margin-top:0!important;padding:12px 0 0;border-top:0!important}
+
+    /* ============================================================
+       05 / SUPPORTING CAST, directory
+       ============================================================ */
+    #supporting .support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(34px,4.8vw,84px);margin:0}
+    #supporting .support{display:block;padding:0;border:0;background:none}
+    #supporting .support img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center}
+    #supporting .sbody{margin-top:20px;padding:17px 0 0;border:0;border-top:2px solid var(--ink)}
+    #supporting .role{display:block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+    #supporting .sname{margin-top:9px;font-family:var(--display);font-size:clamp(32px,4.6vw,76px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase;color:var(--ink)}
+    #supporting .sbio{margin-top:17px;max-width:54ch;font-size:clamp(13.5px,1vw,15.5px);line-height:1.74;color:var(--dim)}
+
+    /* ============================================================
+       06 / THREAT INDEX, confrontational
+       ============================================================ */
+    #threats .support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,4.4vw,76px);margin:0}
+    #threats .support{display:block;padding:0;border:0!important;background:none}
+    #threats .support img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;filter:grayscale(1) contrast(1.14) brightness(.84);transition:filter .4s ease}
+    #threats .support:hover img{filter:grayscale(.15) contrast(1.04) brightness(.98)}
+    #threats .sbody{margin-top:20px;padding:17px 0 0;border:0;border-top:2px solid var(--red)}
+    #threats .role{display:block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+    #threats .sname{margin-top:9px;font-family:var(--display);font-size:clamp(32px,4.6vw,76px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase;color:#f2efe8}
+    #threats .sbio{margin-top:17px;max-width:54ch;font-size:clamp(13.5px,1vw,15.5px);line-height:1.74;color:var(--dim)}
+
+    /* ============================================================
+       07 / EPISODE GUIDE, five across
+       ============================================================ */
+    .ep-block+.ep-block{margin-top:clamp(60px,8vw,128px)}
+    .ep-block-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;padding:0 0 13px;background:none;border:0;border-bottom:1px solid var(--line)}
+    .ep-block-title{font-family:var(--display);font-size:clamp(25px,3.2vw,46px);line-height:.95;letter-spacing:.005em;text-transform:uppercase}
+    .ep-block-count{margin-left:auto;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+    .ep-note{max-width:74ch;margin:clamp(16px,2vw,26px) 0 clamp(28px,3.6vw,48px);padding:0;background:none;border:0;font-size:clamp(14.5px,1.1vw,17px);line-height:1.7;color:var(--dim)}
+
+    .ch-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(20px,2.4vw,36px) clamp(12px,1.6vw,24px);border:0}
+    .ch-row{
+      display:flex;flex-direction:column;align-items:stretch;gap:0;
+      width:100%;padding:0;margin:0;
+      grid-template-columns:none;background:none;border:0;
+      text-align:left;cursor:pointer;transition:none;
+    }
+    .ch-row:hover{background:none}
+    .ch-thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;border:0;background:#101011}
+    .ch-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .ch-row:hover .ch-thumb img{transform:scale(1.055)}
+    .ch-num{display:block;margin-top:12px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;line-height:1;color:var(--red);white-space:nowrap}
+    .ch-title{
+      display:block;margin-top:7px;overflow:visible;
+      font-family:var(--display);font-weight:400;font-size:clamp(15.5px,1.28vw,19px);line-height:1.12;letter-spacing:.012em;text-transform:uppercase;
+      white-space:normal;text-overflow:clip;color:var(--ink);
+    }
+    .ch-watch{
+      display:inline-flex;align-items:center;align-self:flex-start;gap:7px;
+      margin-top:11px;padding:0;border:0;
+      font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;
+      color:var(--dim);transition:color .18s;
+    }
+    .ch-watch::after{content:'';border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--red)}
+    .ch-row:hover .ch-watch{color:var(--red)}
+
+    /* archive grid, kept wired in case a compact group is added later */
+    .tile-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;border:0}
+    .tile{position:relative;aspect-ratio:16/9;overflow:hidden;padding:0;background:#101011;border:0;outline:0;cursor:pointer}
+    .tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.8);transition:filter .3s ease,transform .3s ease}
+    .tile:hover img{filter:none;transform:scale(1.06)}
+    .tile-num{position:absolute;z-index:2;left:6px;bottom:3px;font-family:var(--display);font-size:15px;color:#fff;text-shadow:0 1px 4px #000}
+    .tile:hover .tile-num{color:var(--red)}
+
+    /* PROTOCOL/ZERO, special film feature */
+    .special-card{
+      display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);
+      align-items:center;gap:clamp(22px,3.2vw,58px);
+      width:100%;overflow:hidden;padding:clamp(22px,3.2vw,56px);
+      background:var(--black);border:0;text-align:left;cursor:pointer;transition:none;
+    }
+    .special-card:hover{background:var(--black);border:0}
+    .special-media{position:relative;align-self:center;width:100%;aspect-ratio:16/9;min-height:0;overflow:hidden;background:#000}
+    .special-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.93);transition:filter .4s ease}
+    .special-card:hover .special-media img{filter:brightness(1.02)}
+    .special-body{display:flex;flex-direction:column;justify-content:center;padding:0;color:#f2efe8}
+    .special-kicker{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
+    .special-title{margin-top:clamp(13px,1.6vw,22px);font-family:var(--display);font-size:clamp(32px,4.2vw,74px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase}
+    .special-copy{max-width:56ch;margin-top:clamp(16px,2vw,26px);font-size:clamp(14px,1.05vw,16.5px);line-height:1.74;color:#a49f96}
+    .special-watch{
+      display:inline-flex;align-items:center;align-self:flex-start;gap:10px;
+      margin-top:clamp(20px,2.6vw,34px);padding:14px 24px;
+      background:var(--red);color:#fff;border:0;
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+      transition:background .18s,color .18s;
+    }
+    .special-watch::after{content:'';border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff}
+    .special-card:hover .special-watch{background:#fff;color:var(--black)}
+    .special-card:hover .special-watch::after{border-left-color:var(--black)}
+
+    /* the second special feature mirrors the first */
+    #showSections .ep-block:nth-child(3) .special-card{grid-template-columns:minmax(0,1fr) minmax(0,.95fr)}
+    #showSections .ep-block:nth-child(3) .special-media{grid-column:2;grid-row:1}
+    #showSections .ep-block:nth-child(3) .special-body{grid-column:1;grid-row:1}
+
+    /* ============================================================
+       EXPERIENCE ROUTE, three point sequence
+       ============================================================ */
+    .experience-guide{margin:0;padding:clamp(58px,8vw,124px) var(--edge);background:var(--paper-2);border:0}
+    .experience-head{display:block;gap:0;padding:0;margin:0 0 clamp(38px,5vw,74px);border:0}
+    .experience-kicker{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
+    .experience-title{max-width:15ch;text-wrap:balance;margin-top:clamp(12px,1.6vw,22px);font-family:var(--display);font-size:clamp(36px,6.2vw,102px);line-height:.86;letter-spacing:-.015em;text-transform:uppercase}
+    .experience-route{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+    .experience-route::before{content:'';position:absolute;top:0;right:0;left:0;height:2px;background:var(--ink)}
+    .route-step{position:relative;padding:clamp(22px,2.6vw,36px) clamp(18px,2.6vw,44px) 0 0;border:0}
+    .route-step+.route-step{padding-left:clamp(18px,2.6vw,44px);border-left:1px solid var(--line)}
+    .route-step:last-child{padding-right:0}
+    .route-node{position:static;display:block;width:auto;height:auto;background:none;font-family:var(--display);font-size:clamp(46px,5.8vw,94px);line-height:.8;letter-spacing:-.025em;color:var(--red)}
+    .route-node::after{display:none;content:none}
+    .route-title{margin-top:clamp(14px,1.8vw,24px);font-family:var(--display);font-size:clamp(19px,2.1vw,30px);line-height:1;letter-spacing:.015em;text-transform:uppercase}
+    .route-copy{max-width:38ch;margin-top:13px;font-size:clamp(13.5px,1vw,15.5px);line-height:1.72;color:var(--dim)}
+
+    /* ============================================================
+       FIELD FEED, closing feature
+       ============================================================ */
+    .ig-panel{
+      display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+      column-gap:clamp(28px,4.4vw,80px);align-items:center;
+      margin:0;padding:clamp(58px,8vw,124px) var(--edge);
+      background:var(--black);color:#f2efe8;border:0;
+    }
+    .ig-fig{margin:0;border:0}
+    .ig-fig img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .ig-body .mono-sm{display:block;font-size:10px;letter-spacing:.3em;color:var(--red)}
+    .ig-title{max-width:14ch;text-wrap:balance;margin-top:clamp(13px,1.8vw,24px);font-family:var(--display);font-size:clamp(38px,6.4vw,108px);line-height:.85;letter-spacing:-.018em;text-transform:uppercase}
+    .ig-body p{max-width:52ch;margin:clamp(18px,2.2vw,30px) 0 0;font-size:clamp(14.5px,1.1vw,17px);line-height:1.74;color:#a49f96}
+    .ig-handle{display:block;margin:clamp(20px,2.4vw,32px) 0 0;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#f2efe8}
+    .ig-cta{
+      display:inline-flex;align-items:center;gap:10px;min-height:0;
+      margin-top:clamp(18px,2vw,26px);padding:16px 28px;
+      background:var(--red);color:#fff;border:0;
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
+      transition:background .18s,color .18s;
+    }
+    .ig-cta:hover{background:#fff;color:var(--black)}
+
+    /* ============================================================
+       STUDIO / LEGAL / FOOT
+       ============================================================ */
+    .studio-name{margin:clamp(14px,2vw,26px) 0 clamp(22px,3vw,38px);font-family:var(--display);font-size:clamp(60px,12.5vw,214px);line-height:.8;letter-spacing:-.025em;text-transform:uppercase;color:var(--ink)}
+    #studio .prose{font-size:clamp(15.5px,1.15vw,18px);line-height:1.76;color:var(--dim)}
+    #legal{padding-top:clamp(28px,3.6vw,52px)}
+    .legal-copy{max-width:100ch;margin-top:20px;font-size:12.5px;line-height:1.88;color:var(--dim)}
+    .legal-copy p+p{margin-top:13px}
+    .legal-copy a{color:var(--red);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
+
+    .footer{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
+      padding:clamp(26px,3vw,42px) var(--edge);
+      background:var(--black);border:0;border-top:1px solid rgba(242,239,232,.16);
+    }
+    .footer .mono-sm{font-size:10px;letter-spacing:.22em;color:rgba(242,239,232,.55)}
+    .footer .mono-sm.accent{color:var(--red)}
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media(max-width:1180px){
+      :root{--frame:1100px}
+      #home{grid-template-columns:minmax(0,1fr) minmax(0,250px)}
+      .ib{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    }
+
+    @media(max-width:1024px){
+      .ch-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .tile-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+      #home{grid-template-columns:minmax(0,1fr)}
+      #home>.prose,.rail-note,.art-head,.infobox,.notice{grid-column:1}
+      .rail-note{grid-row:auto;max-width:62ch}
+      #home>.prose{grid-row:auto}
+      .art-head{grid-row:auto}.infobox{grid-row:auto}.notice{grid-row:auto}
+      .ib{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,40px)}
+      .ib-still{max-width:520px}
+      #world .split{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,42px)}
+      #world .figure,#world .prose{grid-column:1;grid-row:auto}
+      #world .prose{max-width:66ch;padding-top:0}
+      #gsi .split{grid-template-columns:minmax(0,1fr);row-gap:clamp(28px,4vw,44px)}
+      #gsi .prose{max-width:66ch}
+      #gsi .figure{max-width:520px;margin-inline:auto}
+      #characters>.prose{columns:1}
+      .char-entry,#characters .char-entry:last-of-type{grid-template-columns:minmax(0,1fr);row-gap:clamp(20px,3vw,32px);align-items:start}
+      #characters .char-entry:last-of-type .char-figure{grid-column:1;grid-row:1}
+      #characters .char-entry:last-of-type>div{grid-column:1;grid-row:2}
+      .char-figure{max-width:520px}
+      .char-name{font-size:clamp(62px,11vw,120px)}
+      .special-card,#showSections .ep-block:nth-child(3) .special-card{grid-template-columns:minmax(0,1fr)}
+      .special-title{font-size:clamp(28px,6.6vw,60px)}
+      #showSections .ep-block:nth-child(3) .special-media{grid-column:1;grid-row:1}
+      #showSections .ep-block:nth-child(3) .special-body{grid-column:1;grid-row:2}
+      .ig-panel{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,40px)}
+      .ig-fig{max-width:420px}
+    }
+
+    @media(max-width:860px){
+      :root{--nav-h:50px}
+      .experience-route{grid-template-columns:minmax(0,1fr)}
+      .route-step{padding:clamp(20px,3vw,28px) 0 clamp(20px,3vw,28px)}
+      .route-step+.route-step{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+      .route-copy{max-width:60ch}
+      #threats .support-grid,#supporting .support-grid{gap:clamp(30px,5vw,48px)}
+    }
+
+    @media(max-width:640px){
+      .ch-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,4vw,26px) clamp(11px,3vw,16px)}
+      .tile-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      #threats .support-grid{grid-template-columns:minmax(0,1fr)}
+      #threats .support img,#supporting .support img,.char-figure,.ig-fig{max-width:none}
+      .art-sub{max-width:none}
+      .ib .ibrow{grid-template-columns:38% minmax(0,1fr)}
+      .notice{grid-template-columns:minmax(0,1fr);gap:8px}
+      .experience-title,.ig-title{max-width:none}
+      .legal-copy{font-size:12.5px}
+      #supporting .support-grid{grid-template-columns:minmax(0,1fr);gap:clamp(32px,6vw,44px)}
+    }
+
+    @media(max-width:560px){
+      .opening{min-height:520px}
+      .opening-video{object-position:68% center}
+      .opening-scroll{font-size:9px}
+    }
+    @media(max-height:560px) and (orientation:landscape){
+      .opening{min-height:100svh}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <section class="opening" aria-label="Sari and Ploy opening reel">
+    <video class="opening-video" autoplay muted loop playsinline preload="auto">
+      <source src="https://github.com/mxvdxn/mxvdxn.github.io/raw/refs/heads/main/video_files/SARIPLOY_LOOP.mp4" type="video/mp4">
+    </video>
+    <p class="opening-scroll">Scroll to explore</p>
+  </section>
+
+  <div class="breadcrumb">
+    <a href="#home">MXVDXN Database</a><span class="sep">/</span>
+    <a href="#home">Originals</a><span class="sep">/</span>
+    <span class="here">Sari &amp; Ploy: After School Agents</span>
+  </div>
+
+  <div class="wiki">
+    <aside class="rail" aria-label="Contents">
+      <h4>Contents</h4>
+      <ul class="toc">
+        <li><a href="#home">Overview</a></li>
+        <li><a href="#world">The World</a></li>
+        <li><a href="#characters">Main Agents</a></li>
+        <li><a href="#gsi">G.S.I.</a></li>
+        <li><a href="#supporting">Supporting Cast</a></li>
+        <li><a href="#threats">Threat Index</a></li>
+        <li><a href="#episodes">Watch Episodes</a></li>
+        <li><a href="#studio">Studio</a></li>
+      </ul>
+      <div class="rail-note">
+        <span class="mono-sm">// Status</span>
+        <p>Ongoing series. This database is maintained by MXVDXN and updated as new episodes release.</p>
+      </div>
+    </aside>
+
+    <main class="article">
+      <section class="sec" id="home" style="padding-top:0">
+        <div class="art-head">
+          <span class="art-kicker">MXVDXN Originals // Series Entry</span>
+          <h1 class="art-title">Sari &amp; Ploy: <br>After School Agents</h1>
+          <p class="art-sub">Students by cover, agents by duty. An original AI action series set across Jakarta and Bangkok.</p>
+          <div class="tag-row">
+            <span class="tag on">AI Action Series</span>
+            <span class="tag">Southeast Asia</span>
+            <span class="tag">Espionage</span>
+            <span class="tag">School</span>
+            <span class="tag">Ongoing</span>
+          </div>
+        </div>
+        <div class="notice">
+          <span class="ico">[!]</span>
+          <p><b>Series in progress.</b> Sari &amp; Ploy: After School Agents is currently ongoing. Episode entries below are updated as new chapters release. Protocol/Zero collects the pre-canon experiments that became the foundation of the series.</p>
+        </div>
+        <div class="prose">
+          <p class="first">By day, they're just two students trying to get through class. By duty, they're agents of the Garuda Siam Initiative, fighting organized crime across Southeast Asia one mission at a time. Every operation hides behind a cover story, and keeping that cover intact is a mission of its own.</p>
+        </div>
+      </section>
+
+      <section class="sec" id="world">
+        <div class="sec-h"><h2>The World</h2><span class="cjk">世界 / DUNIA</span></div>
+        <div class="split">
+          <div class="prose">
+            <p>Somewhere near you, there might be an agent. The grandmother selling vegetables. The gardener trimming hedges outside a school. The vendor behind a food cart. Intelligence work does not always come with a suit and an earpiece, sometimes it looks exactly like everyday life.</p>
+            <p>Sari and Ploy live inside that idea. Students by cover, operatives by duty, moving through a Southeast Asia where danger hides behind ordinary routines, and ordinary routines sometimes hide something else entirely.</p>
+          </div>
+          <figure class="figure sq">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/secret_agents.png?raw=true" alt="The World">
+            <figcaption class="figcap"><span>Fig. 2 — Field</span><span class="accent">SEA Region</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="sec" id="characters">
+        <div class="sec-h"><h2>Main Agents</h2><span class="cjk">要員 / AGEN</span></div>
+        <div class="prose" style="margin-bottom:6px">
+          <p>Sari, from Indonesia, and Ploy, from Thailand. Both lost their fathers to organized crime as children, a loss that left each of them with a deep, unshakable resolve to fight the world that took their fathers from them. Sari grew up on the streets, learning to fight before she learned to read, eventually forging a bond with one of the oldest and most guarded Pencak Silat lineages in the archipelago. Ploy trained in Muay Thai from the time she could walk, raised inside the discipline the way most kids are raised inside a language.</p>
+          <p>They were recruited by the Garuda Siam Initiative for one simple reason: their physical abilities are far beyond ordinary human limits, combat skill that surpasses even most trained field agents. G.S.I. doesn't get talent like this twice.</p>
+          <p>Together, they live in Jakarta, with Ploy posing as a Thai exchange student to explain her presence in the city. What neither of them advertises is that the school they attend sits directly above one of G.S.I.'s Jakarta branches, a full covert headquarters hidden beneath the ordinary rhythm of hallways and classrooms.</p>
+          <p>For their cover, they live as students. But their strength is committed to something larger, the protection of Southeast Asia itself. In exchange, both nations guarantee their lives and their futures for as long as they live, their mothers included. What G.S.I. asks for in return is everything they have to give.</p>
+        </div>
+
+        <div class="char-entry">
+          <figure class="char-figure">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/sari_web.png?raw=true" alt="Sari portrait">
+            <figcaption class="cap"><span>Agent 01</span><span class="accent">IDN</span></figcaption>
+          </figure>
+          <div>
+            <h3 class="char-name">Sari</h3>
+            <div class="char-meta"><span class="m key">Pencak Silat</span><span class="m">Indonesia</span><span class="m">Recon</span><span class="m">Close Quarters</span></div>
+            <p class="bio">Calm. Disciplined. Impossible to rattle. Sari notices danger before anyone else does, and says less than she knows. Her Pencak Silat looks like a dance, graceful, elegant, deliberate, until it isn't.</p>
+            <p class="bio">Behind the composure is someone who softens only for the people she trusts. Everyone else gets the quiet version of Sari, the one that's already three steps ahead.</p>
+          </div>
+        </div>
+
+        <div class="char-entry">
+          <figure class="char-figure">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/ploy_web.png?raw=true" alt="Ploy portrait">
+            <figcaption class="cap"><span>Agent 02</span><span class="accent">THA</span></figcaption>
+          </figure>
+          <div>
+            <h3 class="char-name">Ploy</h3>
+            <div class="char-meta"><span class="m key">Muay Thai</span><span class="m">Thailand</span><span class="m">Assault</span><span class="m">Frontline</span></div>
+            <p class="bio">Warm, loud, endlessly hungry, and nobody's fool. Ploy fights the way she lives, fast, explosive, all in. Her Muay Thai is brutal in a way that catches people off guard, especially the ones who underestimated her over a shared plate of food five minutes earlier.</p>
+            <p class="bio">She wears her emotions in the open, loves Indonesian food without apology, and more than once, her honesty has cut through a room faster than any punch she's thrown.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="gsi">
+        <div class="sec-h"><h2>Garuda Siam Initiative</h2><span class="cjk">機関 / AGENSI</span></div>
+        <div class="split">
+          <div class="prose">
+            <p>A covert bilateral agency built jointly by Indonesia and Thailand to fight organized crime across Southeast Asia, from trafficking networks to underground syndicates operating in the shadows of ordinary cities. G.S.I. exists because some threats move faster than any single nation's law enforcement can respond to alone.</p>
+            <p>Branches are spread across the region, each hidden inside a location no one would think twice about. The school where Sari and Ploy study is home to one of those branches, a full operational headquarters in Jakarta, built directly beneath the campus.</p>
+            <p>Part of what makes G.S.I. effective is who it recruits. Beyond trained agents, its ranks quietly include students, street vendors, housewives, and other ordinary faces woven into the everyday fabric of the cities they protect.</p>
+          </div>
+          <figure class="figure contain" style="background:var(--surface)">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/GSI_LOGO_web.png?raw=true" alt="G.S.I. insignia">
+            <figcaption class="figcap" style="border-top:1px solid var(--line);margin-top:10%"><span>Insignia — GSI</span><span class="accent">Bilateral</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="sec" id="supporting">
+        <div class="sec-h"><h2>Supporting Cast</h2><span class="cjk">支援 / PENDUKUNG</span></div>
+        <div class="support-grid two-column">
+          <article class="support">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/pakboss_web.png?raw=true" alt="Pak Boss portrait">
+            <div class="sbody">
+              <span class="role">G.S.I.</span>
+              <h3 class="sname">Pak Boss</h3>
+              <p class="sbio">Nobody outside G.S.I. knows his real name or rank, just the Boss. Stern and unreadable, but the way he watches over Sari and Ploy hints at something softer underneath, a father figure to two girls who remind him of the daughter he once lost.</p>
+            </div>
+          </article>
+
+          <article class="support">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/rendi_web.png?raw=true" alt="Rendi portrait">
+            <div class="sbody">
+              <span class="role">Field Contact</span>
+              <h3 class="sname">Rendi</h3>
+              <p class="sbio">Sari and Ploy's field contact inside G.S.I. Based out of Garut and long overdue for retirement, but one important call after another keeps pulling him back in. Equal parts mentor and tease, always behind a wall of monitors with a cigarette in hand, and something like a best friend and older brother to them both.</p>
+            </div>
+          </article>
+
+          <article class="support">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/ratih_web.png?raw=true" alt="Ratih portrait">
+            <div class="sbody">
+              <span class="role">Senior Rank, Jakarta</span>
+              <h3 class="sname">Ratih</h3>
+              <p class="sbio">One of G.S.I.'s senior ranks in Jakarta, reporting directly to the Boss. Calm, composed, and always in control. The one who shows up after a mission gets loud, making sure it disappears just as quietly, and just as efficiently.</p>
+            </div>
+          </article>
+
+          <article class="support">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/mamet_web.jpg?raw=true" alt="Mamet portrait">
+            <div class="sbody">
+              <span class="role">Agent M-0</span>
+              <h3 class="sname">Mamet</h3>
+              <p class="sbio">G.S.I.&rsquo;s most accomplished covert intelligence operative. Mamet slips into places no human agent can reach, transmitting everything through the miniature camera on his collar. He communicates only through meows, which Sari and Ploy somehow understand. Ploy spoils him. Sari calls him a menace. Beneath their constant rivalry, he has already become part of the family.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="threats">
+        <div class="sec-h"><h2>Threat Index</h2><span class="cjk">脅威 / ANCAMAN</span></div>
+        <div class="support-grid two-column threat-grid">
+          <article class="support">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/damar_web.png?raw=true" alt="Damar portrait">
+            <div class="sbody">
+              <span class="role">Known Alias</span>
+              <h3 class="sname">Damar</h3>
+              <p class="sbio">Damar may not be his real name. He moves between local criminal networks, collecting rumors and selling certainty to whoever benefits. Not a boss and not a fighter, his power lies entirely in what he knows. He has seen Sari and Ploy&rsquo;s faces, studied their methods, and watched their legend spread. Nobody knows who he reports to, or whether he reports to anyone at all.</p>
+            </div>
+          </article>
+
+          <article class="support">
+            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/agni_web.png?raw=true" alt="Nyi Agni Wulan portrait">
+            <div class="sbody">
+              <span class="role">Banaspati High Command</span>
+              <h3 class="sname">Nyi Agni Wulan</h3>
+              <p class="sbio">One of Banaspati&rsquo;s highest-ranking commanders, Agni disappeared without explanation and was presumed dead, defected, or worse. Now she has returned without offering an answer, carrying mechanical fire in both arms and a contract for Sari and Ploy&rsquo;s heads. She is not Banaspati&rsquo;s leader, but few within the organization possess enough authority, history, or violence to question her.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="episodes">
+        <div class="sec-h"><h2>Watch Episodes</h2><span class="cjk">話数 / EPISODE</span><span class="edit">Season 1</span></div>
+        <div id="showSections"></div>
+
+        <section class="experience-guide" aria-labelledby="experience-title">
+          <div class="experience-head">
+            <span class="experience-kicker mono-sm">// How to Follow the Series</span>
+            <h3 class="experience-title" id="experience-title">One Story. Three Points of Entry.</h3>
+          </div>
+          <div class="experience-route">
+            <article class="route-step">
+              <span class="route-node">01</span>
+              <h4 class="route-title">Watch the Main Story</h4>
+              <p class="route-copy">Start with After School Agents. The numbered episodes form the ongoing canon storyline and are designed to be watched in order.</p>
+            </article>
+            <article class="route-step">
+              <span class="route-node">02</span>
+              <h4 class="route-title">Return to the Database</h4>
+              <p class="route-copy">Come back as the series grows. New episodes, character files, organizations, threats, and pieces of lore will continue to be added here.</p>
+            </article>
+            <article class="route-step">
+              <span class="route-node">03</span>
+              <h4 class="route-title">Follow the Field Feed</h4>
+              <p class="route-copy">Instagram carries shorter fragments from their world: clues around canon episodes, everyday chaos, visual studies, and candid moments between missions.</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="ig-panel">
+          <figure class="ig-fig"><img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/SP_IG.png?raw=true" alt="Sari &amp; Ploy on Instagram"></figure>
+          <div class="ig-body">
+            <span class="mono-sm">// Field Feed / Instagram</span>
+            <h3 class="ig-title">Stay With Them Between Missions.</h3>
+            <p>Some moments move the plot. Others reveal who Sari and Ploy are when nobody is briefing them. Follow the field feed for clues, everyday trouble, visual experiments, and small moments that make their world feel lived in.</p>
+            <span class="ig-handle">@sariploy.mxvdxn</span>
+            <a class="ig-cta" href="https://www.instagram.com/sariploy.mxvdxn/" target="_blank" rel="noopener noreferrer">Follow the Field Feed ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="studio">
+        <div class="sec-h"><h2>Studio</h2><span class="cjk">制作 / STUDIO</span></div>
+        <h3 class="studio-name">MXVDXN</h3>
+        <div class="prose" style="max-width:820px">
+          <p>Sari &amp; Ploy: After School Agents is created by Dan Pradana under MXVDXN, an independent studio developing original Southeast Asian entertainment IP with AI. Every scene is written and directed as a shot list before it is generated, treating AI video the way a filmmaker treats a camera, a tool for telling a story, not a shortcut around telling one.</p>
+        </div>
+      </section>
+
+      <section class="sec" id="legal">
+        <div class="sec-h"><h2>Legal Notice</h2></div>
+        <div class="legal-copy">
+          <p>Sari &amp; Ploy: After School Agents, including all characters, character names, likenesses, storylines, dialogue, episode content, visual designs, logos, and related materials, is an original intellectual property created by Dan Pradana and owned by MXVDXN. All rights reserved, 2026.</p>
+          <p>This work is protected under Law of the Republic of Indonesia No. 28 of 2014 on Copyright and applicable international copyright treaties, including the Berne Convention. No part of this work may be reproduced, distributed, publicly performed, adapted, translated, or used to create derivative works, in any form or by any means, without prior written permission from MXVDXN. This includes use of any material from this work for the training of artificial intelligence models or datasets.</p>
+          <p>Unauthorized use of this intellectual property will be pursued to the fullest extent permitted by law. For licensing, collaboration, or press inquiries, contact <a href="mailto:mxvdxn@gmail.com">mxvdxn@gmail.com</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="infobox" aria-label="Series infobox">
+      <div class="ib">
+        <div class="ib-title">Sari &amp; Ploy</div>
+        <div class="ib-media"><img decoding="async" fetchpriority="high" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/SP_SQUARE.png?raw=true" alt="Sari &amp; Ploy key still"></div>
+        <div class="ib-cap">Key Still — After School Agents</div>
+        <div class="ib-section">// General</div>
+        <dl>
+          <div class="ibrow"><dt>Title</dt><dd>After School Agents</dd></div>
+          <div class="ibrow"><dt>Type</dt><dd>AI Action Series</dd></div>
+          <div class="ibrow"><dt>Setting</dt><dd>Jakarta × Bangkok</dd></div>
+          <div class="ibrow"><dt>Status</dt><dd class="hot">Ongoing</dd></div>
+          <div class="ibrow"><dt>Episodes</dt><dd>11 main + 2 special films</dd></div>
+          <div class="ibrow"><dt>Creator</dt><dd>Dan Pradana</dd></div>
+          <div class="ibrow"><dt>Studio</dt><dd>MXVDXN</dd></div>
+        </dl>
+        <div class="ib-section">// Agency</div>
+        <dl>
+          <div class="ibrow"><dt>Org</dt><dd>Garuda Siam Initiative</dd></div>
+          <div class="ibrow"><dt>Nations</dt><dd>Indonesia · Thailand</dd></div>
+        </dl>
+        <a class="ib-cta" href="#episodes">Watch Episodes</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <span class="mono-sm">Sari &amp; Ploy by MXVDXN / Dan Pradana / 2026. All rights reserved.</span>
+    <span class="mono-sm accent">// MXVDXN Database</span>
+  </footer>
+
+  <div class="player-modal" id="playerModal" aria-hidden="true" style="position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(18px,5vw,72px);background:rgba(4,6,6,.9);backdrop-filter:blur(12px)">
+    <div class="player-dialog" role="dialog" aria-modal="true" aria-label="Video player" style="position:relative;width:min(1120px,100%);background:#000;border:1px solid var(--accent)">
+      <button class="player-close" id="playerClose" type="button" style="position:absolute;z-index:2;right:0;top:0;transform:translateY(-100%);min-width:104px;height:40px;border:1px solid var(--accent);border-bottom:0;background:var(--bg);color:var(--accent);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer">Close</button>
+      <div class="player-frame" id="playerFrame" style="aspect-ratio:16/9;background:#000"></div>
+    </div>
+  </div>
+  <style>
+    .player-modal.open{display:flex!important}
+    .player-frame iframe{width:100%;height:100%;border:0}
+    .player-close:hover{background:var(--accent)!important;color:var(--bg)!important}
+  </style>
+
+  <script>
+    /* Layout composition only. No content is created, removed or rewritten here,
+       existing nodes are moved into their editorial positions. */
+    (function () {
+      var body = document.body;
+      var wiki = document.querySelector('.wiki');
+      var article = document.querySelector('.article');
+      var rail = document.querySelector('.rail');
+      var railNote = document.querySelector('.rail-note');
+      var infobox = document.querySelector('.infobox');
+      var home = document.getElementById('home');
+      var studio = document.getElementById('studio');
+      var notice = home ? home.querySelector('.notice') : null;
+      var guide = document.querySelector('.experience-guide');
+      var feed = document.querySelector('.ig-panel');
+
+      if (rail && wiki && wiki.parentNode === body) body.insertBefore(rail, wiki);
+      if (infobox && home && notice) home.insertBefore(infobox, notice);
+      if (railNote && home) home.appendChild(railNote);
+      /* split the credit sheet into a still column and a data column */
+      var ib = document.querySelector('.ib');
+      if (ib && !ib.querySelector('.ib-still')) {
+        var still = document.createElement('div');
+        var credits = document.createElement('div');
+        still.className = 'ib-still';
+        credits.className = 'ib-credits';
+        var media = ib.querySelector('.ib-media');
+        var cap = ib.querySelector('.ib-cap');
+        ib.insertBefore(still, ib.firstChild);
+        if (media) still.appendChild(media);
+        if (cap) still.appendChild(cap);
+        ib.appendChild(credits);
+        Array.prototype.slice.call(ib.children).forEach(function (child) {
+          if (child !== still && child !== credits) credits.appendChild(child);
+        });
+      }
+
+      if (guide && studio && article) article.insertBefore(guide, studio);
+      if (feed && studio && article) article.insertBefore(feed, studio);
+
+      /* section marking for the two dark bands */
+      var gsi = document.getElementById('gsi');
+      var threats = document.getElementById('threats');
+      if (gsi) gsi.classList.add('band-dark');
+      if (threats) threats.classList.add('band-dark');
+
+      /* nav highlights the section currently in view */
+      var links = {}, targets = [];
+      Array.prototype.forEach.call(document.querySelectorAll('.toc a[href^="#"]'), function (a) {
+        var el = document.getElementById(a.getAttribute('href').slice(1));
+        if (el) { links[el.id] = a; targets.push(el); }
+      });
+      if (targets.length && 'IntersectionObserver' in window) {
+        var seen = {};
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+          var best = null, top = 0;
+          for (var id in seen) { if (seen[id] > top) { top = seen[id]; best = id; } }
+          for (var k in links) links[k].classList.toggle('is-current', k === best);
+        }, {rootMargin: '-56px 0px -55% 0px', threshold: [0, 0.02, 0.2, 0.6, 1]});
+        targets.forEach(function (t) { io.observe(t); });
+      }
+    })();
+  </script>
+
+  <script>
+    const shows = [{
+      "id":"sari-ploy",
+      "title":"Sari & Ploy",
+      "type":"AI Action Series",
+      "setting":"Jakarta x Bangkok",
+      "status":"Ongoing",
+      "count":"11 Canon + 2 Special Films",
+      "video":"https://github.com/mxvdxn/mxvdxn.github.io/raw/refs/heads/main/video_files/sari_ploy_home.mp4",
+      "description":"Sari and Ploy are students by day and secret agents for the Garuda-Siam Initiative by necessity. Beneath the routines of school life, they are pulled into hidden operations across Southeast Asia, where every cover story and enemy pushes them closer to a world that is beginning to know their names.",
+      "cover_episode":"davYXgXl5d0",
+      "episode_groups":[
+        {
+          "title":"After School Agents",
+          "count":"11 Episodes",
+          "description":"This is the main canon storyline of Sari & Ploy. Follow them as school life collides with covert operations for the Garuda-Siam Initiative, with every mission, enemy, and consequence continuing from one episode to the next.",
+          "episodes":[
+            "davYXgXl5d0",
+            "nkeYjzqwX-E",
+            "8jEa_NkapAM",
+            "AVM-pYn6TFs",
+            "8ChdKh3Zy68",
+            "GuRqJ62O-oM",
+            "PctBCmyI1_E",
+            "hHC0oTzDsu0",
+            "_WdxXbnFtWY",
+            "sGquR2_Ez5Q",
+            "jGSz4t8FUsQ"
+          ],
+          "episode_titles":[
+            "The Exchange Student",
+            "The Scam Center",
+            "Too Many People Know",
+            "Mystic Arts",
+            "The Weight of a Name",
+            "The Flower of Death",
+            "The Confirmation",
+            "Something's Coming",
+            "The Price on Their Names",
+            "The Woman in the Fire",
+            "The Other Agents"
+          ]
+        },
+        {
+          "title":"Sari & Ploy: Protocol/Zero",
+          "count":"Special Film",
+          "layout":"feature",
+          "description":"Created before Sari and Ploy had a canon or shared universe, these early experiments established their chemistry, energy, and visual language. Collected as Protocol/Zero, they became the foundation for After School Agents.",
+          "episodes":[
+            "ScnrfvDuR6o"
+          ],
+          "episode_titles":[
+            "Protocol/Zero"
+          ]
+        },
+        {
+          "title":"Dreamina<br>Seedance 2.5<br>Special Episode",
+          "kicker":"Special Film / Seedance 2.5 Launch",
+          "cta":"Watch the Special",
+          "count":"Special Film",
+          "layout":"feature",
+          "description":"A special video made in celebration with Dreamina, the official home for Seedance 2.5.",
+          "episodes":[
+            "d1ZrMjiAu7I"
+          ],
+          "episode_titles":[
+            "Dreamina Seedance 2.5 Special Episode"
+          ]
+        }
+      ]
+    }];
+
+    const showSections = document.getElementById('showSections');
+    const playerModal = document.getElementById('playerModal');
+    const playerFrame = document.getElementById('playerFrame');
+    const playerClose = document.getElementById('playerClose');
+    let lastPlayerTrigger = null;
+
+    function thumb(id) {
+      return 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+    }
+
+    function openPlayer(id, label) {
+      lastPlayerTrigger = document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+      playerFrame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="' + label + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      playerModal.classList.add('open');
+      playerModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('player-open');
+      playerClose.focus();
+    }
+
+    function closePlayer() {
+      playerFrame.innerHTML = '';
+      playerModal.classList.remove('open');
+      playerModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('player-open');
+      if (lastPlayerTrigger) {
+        lastPlayerTrigger.focus({ preventScroll: true });
+        lastPlayerTrigger = null;
+      }
+    }
+
+    function chapterRow(show, group, id, index, title) {
+      const episodeNumber = String(index + 1).padStart(2, '0');
+      const titleMarkup = title
+        ? '<span class="ch-title">' + title + '</span>'
+        : '<span class="ch-title"></span>';
+      const numberMarkup = group.hide_numbers
+        ? ''
+        : '<span class="ch-num">EP ' + episodeNumber + '</span>';
+      const label = group.hide_numbers
+        ? show.title + ': ' + title
+        : show.title + ' Episode ' + episodeNumber;
+      const rowClass = group.hide_numbers
+        ? 'episode ch-row no-number'
+        : 'episode ch-row';
+
+      return '<button class="' + rowClass + '" type="button" data-video="' + id + '" data-label="' + label + '" aria-label="Watch ' + label + '"><span class="ch-thumb"><img loading="lazy" decoding="async" src="' + thumb(id) + '" alt="' + label + '"></span>' + numberMarkup + titleMarkup + '<span class="ch-watch">Watch</span></button>';
+    }
+
+    function archiveTile(show, id, index) {
+      const episodeNumber = String(index + 1).padStart(2, '0');
+
+      return '<button class="episode tile" type="button" data-video="' + id + '" data-label="' + show.title + ' Episode ' + episodeNumber + '" aria-label="Watch ' + show.title + ' episode ' + (index + 1) + '"><img loading="lazy" decoding="async" src="' + thumb(id) + '" alt="' + show.title + ' episode ' + (index + 1) + '"><span class="tile-num">' + episodeNumber + '</span></button>';
+    }
+
+    function specialFeature(show, group) {
+      const id = group.episodes[0];
+      const title = group.episode_titles && group.episode_titles[0]
+        ? group.episode_titles[0]
+        : group.title;
+      const label = show.title + ': ' + title;
+      const kicker = group.kicker || 'Special Film / Pre-Canon';
+      const cta = group.cta || 'Watch Protocol/Zero';
+
+      return '<button class="episode special-card" type="button" data-video="' + id + '" data-label="' + label + '" aria-label="Watch ' + label + '"><span class="special-media"><img loading="lazy" decoding="async" src="https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg" alt="' + label + '"></span><span class="special-body"><span class="special-kicker mono-sm">' + kicker + '</span><span class="special-title">' + group.title + '</span><span class="special-copy">' + group.description + '</span><span class="special-watch">' + cta + '</span></span></button>';
+    }
+
+    function episodeGroup(show, group) {
+      const isCompact = group.layout === 'compact';
+      const isFeature = group.layout === 'feature';
+
+      if (isFeature) {
+        const featureId = group.episodes && group.episodes[0];
+        if (!featureId) return '';
+        return '<div class="ep-block">' + specialFeature(show, group) + '</div>';
+      }
+
+      const episodes = group.episodes.map((id, index) => {
+        const episodeTitle =
+          group.episode_titles && group.episode_titles[index]
+            ? group.episode_titles[index]
+            : '';
+
+        return isCompact
+          ? archiveTile(show, id, index)
+          : chapterRow(show, group, id, index, episodeTitle);
+      }).join('');
+
+      const head =
+        '<div class="ep-block-head"><h3 class="ep-block-title">' +
+        group.title +
+        '</h3><span class="ep-block-count">' +
+        group.count +
+        '</span></div>';
+
+      const note = group.description
+        ? '<p class="ep-note">' + group.description + '</p>'
+        : '';
+
+      const body = isCompact
+        ? '<div class="tile-grid">' + episodes + '</div>'
+        : '<div class="ch-list">' + episodes + '</div>';
+
+      return '<div class="ep-block">' + head + note + body + '</div>';
+    }
+
+    showSections.innerHTML = shows.map(show => {
+      const groups = show.episode_groups || [{
+        title: 'Episodes',
+        count: show.count,
+        episodes: show.episodes,
+        episode_titles: show.episode_titles
+      }];
+
+      return groups.map(group => episodeGroup(show, group)).join('');
+    }).join('');
+
+    showSections.addEventListener('click', event => {
+      const episode = event.target.closest('.episode');
+      if (episode) {
+        openPlayer(episode.dataset.video, episode.dataset.label);
+      }
+    });
+
+    playerClose.addEventListener('click', closePlayer);
+
+    playerModal.addEventListener('click', event => {
+      if (event.target === playerModal) closePlayer();
+    });
+
+    window.addEventListener('keydown', event => {
+      if (
+        event.key === 'Escape' &&
+        playerModal.classList.contains('open')
+      ) {
+        closePlayer();
+      }
+    });
+  </script>
+</body>
+</html>
