@@ -314,7 +314,7 @@
 
     #world .split{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(0,1fr);column-gap:clamp(28px,4.4vw,80px);align-items:start}
     #world .figure{grid-column:1;grid-row:1}
-    #world .figure img{width:100%;height:auto;max-height:clamp(400px,62vw,760px);object-fit:cover;object-position:center}
+    #world .figure img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center}
     #world .prose{grid-column:2;grid-row:1;max-width:44ch;padding-top:clamp(0px,5.5vw,104px)}
     #world .prose p:first-child{font-size:clamp(18px,1.75vw,27px);line-height:1.42;letter-spacing:-.005em;margin-bottom:1em}
 
@@ -410,6 +410,20 @@
     .ch-watch::after{content:'';border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--red)}
     .ch-row:hover .ch-watch{color:var(--red)}
 
+    .ep-cta{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px clamp(24px,3.4vw,56px);
+      margin-top:clamp(28px,3.6vw,52px);padding-top:clamp(20px,2.4vw,30px);
+      border-top:1px solid var(--line);
+    }
+    .ep-cta-note{max-width:58ch;margin:0;font-size:clamp(14px,1.05vw,16.5px);line-height:1.7;color:var(--dim)}
+    .ep-cta-link{
+      display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+      padding:15px 26px;background:var(--red);color:#fff;border:0;
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;white-space:nowrap;
+      transition:background .18s,color .18s;
+    }
+    .ep-cta-link:hover{background:var(--black);color:#fff}
+
     /* archive grid, kept wired in case a compact group is added later */
     .tile-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;border:0}
     .tile{position:relative;aspect-ratio:16/9;overflow:hidden;padding:0;background:#101011;border:0;outline:0;cursor:pointer}
@@ -470,13 +484,13 @@
        FIELD FEED, closing feature
        ============================================================ */
     .ig-panel{
-      display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
       column-gap:clamp(28px,4.4vw,80px);align-items:center;
       margin:0;padding:clamp(58px,8vw,124px) var(--edge);
       background:var(--black);color:#f2efe8;border:0;
     }
     .ig-fig{margin:0;border:0}
-    .ig-fig img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .ig-fig img{width:100%;height:auto;max-width:none;aspect-ratio:auto;object-fit:contain}
     .ig-body .mono-sm{display:block;font-size:10px;letter-spacing:.3em;color:var(--red)}
     .ig-title{max-width:14ch;text-wrap:balance;margin-top:clamp(13px,1.8vw,24px);font-family:var(--display);font-size:clamp(38px,6.4vw,108px);line-height:.85;letter-spacing:-.018em;text-transform:uppercase}
     .ig-body p{max-width:52ch;margin:clamp(18px,2.2vw,30px) 0 0;font-size:clamp(14.5px,1.1vw,17px);line-height:1.74;color:#a49f96}
@@ -544,11 +558,13 @@
       #showSections .ep-block:nth-child(3) .special-media{grid-column:1;grid-row:1}
       #showSections .ep-block:nth-child(3) .special-body{grid-column:1;grid-row:2}
       .ig-panel{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,40px)}
-      .ig-fig{max-width:420px}
+      .ig-fig{max-width:540px}
     }
 
     @media(max-width:860px){
       :root{--nav-h:50px}
+      .ep-cta{gap:18px}
+      .ep-cta-note{max-width:none}
       .experience-route{grid-template-columns:minmax(0,1fr)}
       .route-step{padding:clamp(20px,3vw,28px) 0 clamp(20px,3vw,28px)}
       .route-step+.route-step{padding-left:0;border-left:0;border-top:1px solid var(--line)}
@@ -945,6 +961,9 @@
         {
           "title":"After School Agents",
           "count":"11 Episodes",
+          "channel_note":"Every episode also lives on the Sari & Ploy channel. Subscribe there and the next one reaches you the day it lands.",
+          "channel_cta":"Subscribe on YouTube",
+          "channel_url":"https://www.youtube.com/@sariploy.mxvdxn",
           "description":"This is the main canon storyline of Sari & Ploy. Follow them as school life collides with covert operations for the Garuda-Siam Initiative, with every mission, enemy, and consequence continuing from one episode to the next.",
           "episodes":[
             "davYXgXl5d0",
@@ -1106,7 +1125,13 @@
         ? '<div class="tile-grid">' + episodes + '</div>'
         : '<div class="ch-list">' + episodes + '</div>';
 
-      return '<div class="ep-block">' + head + note + body + '</div>';
+      const channel = group.channel_url
+        ? '<div class="ep-cta"><p class="ep-cta-note">' + group.channel_note +
+          '</p><a class="ep-cta-link" href="' + group.channel_url +
+          '" target="_blank" rel="noopener noreferrer">' + group.channel_cta + ' \u2197</a></div>'
+        : '';
+
+      return '<div class="ep-block">' + head + note + body + channel + '</div>';
     }
 
     showSections.innerHTML = shows.map(show => {
