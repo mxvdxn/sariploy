@@ -264,8 +264,9 @@
       align-items:start;border:0;background:none;
     }
     .ib>*{min-width:0}
-    .ib-still,.ib-credits{min-width:0}
-    .ib-media{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;background:var(--paper-2)}
+    .ib{display:block}
+    .ib-still{min-width:0;width:100%}
+    .ib-media{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:0;background:var(--paper-2)}
     .ib-media img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center}
     .ib-cap{padding:11px 0 0;border:0;text-align:left;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
     .ib-title{padding:0 0 12px;background:none;border:0;text-align:left;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
@@ -619,7 +620,6 @@
         <li><a href="#characters">Main Agents</a></li>
         <li><a href="#gsi">G.S.I.</a></li>
         <li><a href="#supporting">Supporting Cast</a></li>
-        <li><a href="#threats">Threat Index</a></li>
         <li><a href="#episodes">Watch Episodes</a></li>
         <li><a href="#studio">Studio</a></li>
       </ul>
@@ -758,56 +758,9 @@
         </div>
       </section>
 
-      <section class="sec" id="threats">
-        <div class="sec-h"><h2>Threat Index</h2><span class="cjk">脅威 / ANCAMAN</span></div>
-        <div class="support-grid two-column threat-grid">
-          <article class="support">
-            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/damar_web.png?raw=true" alt="Damar portrait">
-            <div class="sbody">
-              <span class="role">Known Alias</span>
-              <h3 class="sname">Damar</h3>
-              <p class="sbio">Damar may not be his real name. He moves between local criminal networks, collecting rumors and selling certainty to whoever benefits. Not a boss and not a fighter, his power lies entirely in what he knows. He has seen Sari and Ploy&rsquo;s faces, studied their methods, and watched their legend spread. Nobody knows who he reports to, or whether he reports to anyone at all.</p>
-            </div>
-          </article>
-
-          <article class="support">
-            <img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/agni_web.png?raw=true" alt="Nyi Agni Wulan portrait">
-            <div class="sbody">
-              <span class="role">Banaspati High Command</span>
-              <h3 class="sname">Nyi Agni Wulan</h3>
-              <p class="sbio">One of Banaspati&rsquo;s highest-ranking commanders, Agni disappeared without explanation and was presumed dead, defected, or worse. Now she has returned without offering an answer, carrying mechanical fire in both arms and a contract for Sari and Ploy&rsquo;s heads. She is not Banaspati&rsquo;s leader, but few within the organization possess enough authority, history, or violence to question her.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section class="sec" id="episodes">
         <div class="sec-h"><h2>Watch Episodes</h2><span class="cjk">話数 / EPISODE</span><span class="edit">Season 1</span></div>
         <div id="showSections"></div>
-
-        <section class="experience-guide" aria-labelledby="experience-title">
-          <div class="experience-head">
-            <span class="experience-kicker mono-sm">// How to Follow the Series</span>
-            <h3 class="experience-title" id="experience-title">One Story. Three Points of Entry.</h3>
-          </div>
-          <div class="experience-route">
-            <article class="route-step">
-              <span class="route-node">01</span>
-              <h4 class="route-title">Watch the Main Story</h4>
-              <p class="route-copy">Start with After School Agents. The numbered episodes form the ongoing canon storyline and are designed to be watched in order.</p>
-            </article>
-            <article class="route-step">
-              <span class="route-node">02</span>
-              <h4 class="route-title">Return to the Database</h4>
-              <p class="route-copy">Come back as the series grows. New episodes, character files, organizations, threats, and pieces of lore will continue to be added here.</p>
-            </article>
-            <article class="route-step">
-              <span class="route-node">03</span>
-              <h4 class="route-title">Follow the Field Feed</h4>
-              <p class="route-copy">Instagram carries shorter fragments from their world: clues around canon episodes, everyday chaos, visual studies, and candid moments between missions.</p>
-            </article>
-          </div>
-        </section>
 
         <div class="ig-panel">
           <figure class="ig-fig"><img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/SP_IG.png?raw=true" alt="Sari &amp; Ploy on Instagram"></figure>
@@ -839,27 +792,12 @@
       </section>
     </main>
 
-    <aside class="infobox" aria-label="Series infobox">
+    <aside class="infobox" aria-label="Sari and Ploy key visual">
       <div class="ib">
-        <div class="ib-title">Sari &amp; Ploy</div>
-        <div class="ib-media"><img decoding="async" fetchpriority="high" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/SP_SQUARE.png?raw=true" alt="Sari &amp; Ploy key still"></div>
-        <div class="ib-cap">Key Still — After School Agents</div>
-        <div class="ib-section">// General</div>
-        <dl>
-          <div class="ibrow"><dt>Title</dt><dd>After School Agents</dd></div>
-          <div class="ibrow"><dt>Type</dt><dd>AI Action Series</dd></div>
-          <div class="ibrow"><dt>Setting</dt><dd>Jakarta × Bangkok</dd></div>
-          <div class="ibrow"><dt>Status</dt><dd class="hot">Ongoing</dd></div>
-          <div class="ibrow"><dt>Episodes</dt><dd>11 main + 2 special films</dd></div>
-          <div class="ibrow"><dt>Creator</dt><dd>Dan Pradana</dd></div>
-          <div class="ibrow"><dt>Studio</dt><dd>MXVDXN</dd></div>
-        </dl>
-        <div class="ib-section">// Agency</div>
-        <dl>
-          <div class="ibrow"><dt>Org</dt><dd>Garuda Siam Initiative</dd></div>
-          <div class="ibrow"><dt>Nations</dt><dd>Indonesia · Thailand</dd></div>
-        </dl>
-        <a class="ib-cta" href="#episodes">Watch Episodes</a>
+        <div class="ib-still">
+          <div class="ib-media"><img decoding="async" fetchpriority="high" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/sariploy_header.png?raw=true" alt="Sari &amp; Ploy key still"></div>
+          <div class="ib-cap">Key Still — After School Agents</div>
+        </div>
       </div>
     </aside>
   </div>
@@ -894,7 +832,6 @@
       var home = document.getElementById('home');
       var studio = document.getElementById('studio');
       var notice = home ? home.querySelector('.notice') : null;
-      var guide = document.querySelector('.experience-guide');
       var feed = document.querySelector('.ig-panel');
 
       if (rail && wiki && wiki.parentNode === body) body.insertBefore(rail, wiki);
@@ -918,7 +855,6 @@
         });
       }
 
-      if (guide && studio && article) article.insertBefore(guide, studio);
       if (feed && studio && article) article.insertBefore(feed, studio);
 
       /* section marking for the two dark bands */
@@ -953,14 +889,14 @@
       "type":"AI Action Series",
       "setting":"Jakarta x Bangkok",
       "status":"Ongoing",
-      "count":"11 Canon + 2 Special Films",
+      "count":"12 Canon + 2 Special Films",
       "video":"https://github.com/mxvdxn/mxvdxn.github.io/raw/refs/heads/main/video_files/sari_ploy_home.mp4",
       "description":"Sari and Ploy are students by day and secret agents for the Garuda-Siam Initiative by necessity. Beneath the routines of school life, they are pulled into hidden operations across Southeast Asia, where every cover story and enemy pushes them closer to a world that is beginning to know their names.",
       "cover_episode":"davYXgXl5d0",
       "episode_groups":[
         {
           "title":"After School Agents",
-          "count":"11 Episodes",
+          "count":"12 Episodes",
           "channel_note":"Every episode also lives on the Sari & Ploy channel. Subscribe there and the next one reaches you the day it lands.",
           "channel_cta":"Subscribe on YouTube",
           "channel_url":"https://www.youtube.com/@sariploy.mxvdxn",
@@ -976,7 +912,8 @@
             "hHC0oTzDsu0",
             "_WdxXbnFtWY",
             "sGquR2_Ez5Q",
-            "jGSz4t8FUsQ"
+            "jGSz4t8FUsQ",
+            "Vr3ifr3sCE0"
           ],
           "episode_titles":[
             "The Exchange Student",
@@ -989,7 +926,8 @@
             "Something's Coming",
             "The Price on Their Names",
             "The Woman in the Fire",
-            "The Other Agents"
+            "The Other Agents",
+            "Wild Flowers"
           ]
         },
         {
