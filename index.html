@@ -180,53 +180,156 @@
     .sec{position:relative;padding:clamp(56px,8vw,124px) var(--edge);scroll-margin-top:calc(var(--nav-h) + 8px)}
 
     /* ============================================================
-       SECTION HEADS / a different composition per section
+       SECTION HEADS
        ============================================================ */
     .sec-h{display:block;position:relative;padding:0;margin:0 0 clamp(30px,4.4vw,58px);border:0}
     .sec-h h2{font-family:var(--display);font-size:clamp(38px,6vw,86px);line-height:.86;letter-spacing:-.005em;text-transform:uppercase}
     .sec-h .cjk{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
     .sec-h .edit{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
 
-    /* The World: label above, headline below a heavy rule */
-    #world .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:11px;padding-bottom:16px;border-bottom:2px solid var(--ink)}
-    #world .sec-h .cjk{order:-1}
-    #world .sec-h h2{font-size:clamp(44px,8.4vw,132px);letter-spacing:-.014em}
-
-    /* Main Agents: red label, no rule, the largest headline on paper */
-    #characters .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
-    #characters .sec-h .cjk{order:-1;color:var(--red)}
-    #characters .sec-h h2{font-size:clamp(50px,10vw,152px);letter-spacing:-.02em}
-
-    /* G.S.I.: ruled institutional band */
-    #gsi .sec-h{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    #gsi .sec-h h2{font-size:clamp(24px,3.4vw,50px);letter-spacing:.005em}
-
-    /* Supporting Cast: one baseline, heavy rule */
-    #supporting .sec-h{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
-    #supporting .sec-h h2{font-size:clamp(34px,5vw,72px)}
-    #supporting .sec-h .cjk{padding-bottom:8px}
-
-    /* Threat Index: headline first, label underneath */
-    #threats .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:0}
-    #threats .sec-h h2{font-size:clamp(46px,8.6vw,132px);letter-spacing:-.018em}
-    #threats .sec-h .cjk{margin-top:17px;color:rgba(242,239,232,.5)}
-
-    /* Watch Episodes: utility marks stacked at the right edge */
+    /* Watch Episodes Header */
     #episodes .sec-h{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:6px 20px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
     #episodes .sec-h h2{grid-column:1;grid-row:1/span 2;align-self:end;font-size:clamp(40px,7vw,104px);letter-spacing:-.012em}
     #episodes .sec-h .cjk{grid-column:2;grid-row:1;text-align:right}
     #episodes .sec-h .edit{grid-column:2;grid-row:2;justify-self:end;align-self:end;padding-bottom:8px}
 
-    /* Studio: deliberately quiet */
+    /* The World */
+    #world .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:11px;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+    #world .sec-h .cjk{order:-1}
+    #world .sec-h h2{font-size:clamp(44px,8.4vw,132px);letter-spacing:-.014em}
+
+    /* Main Agents */
+    #characters .sec-h{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+    #characters .sec-h .cjk{order:-1;color:var(--red)}
+    #characters .sec-h h2{font-size:clamp(50px,10vw,152px);letter-spacing:-.02em}
+
+    /* G.S.I. */
+    #gsi .sec-h{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    #gsi .sec-h h2{font-size:clamp(24px,3.4vw,50px);letter-spacing:.005em}
+
+    /* Supporting Cast */
+    #supporting .sec-h{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+    #supporting .sec-h h2{font-size:clamp(34px,5vw,72px)}
+    #supporting .sec-h .cjk{padding-bottom:8px}
+
+    /* Studio */
     #studio .sec-h{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 12px;margin-bottom:0}
     #studio .sec-h h2{font-size:clamp(20px,2.4vw,32px);letter-spacing:.03em}
 
-    /* Legal: smallest type on the page */
+    /* Legal */
     #legal .sec-h{display:flex;align-items:baseline;gap:12px;padding-top:20px;border-top:1px solid var(--line);margin-bottom:0}
     #legal .sec-h h2{font-size:clamp(15px,1.6vw,19px);letter-spacing:.16em}
 
     /* ============================================================
-       01 / OPENING CREDITS
+       01 / EPISODE GUIDE & SPECIAL ARCHIVES (#episodes)
+       ============================================================ */
+    .ep-block+.ep-block{margin-top:clamp(48px,6vw,96px)}
+    .ep-block-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;padding:0 0 13px;background:none;border:0;border-bottom:1px solid var(--line)}
+    .ep-block-title{font-family:var(--display);font-size:clamp(25px,3.2vw,46px);line-height:.95;letter-spacing:.005em;text-transform:uppercase}
+    .ep-block-count{margin-left:auto;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+    .ep-note{max-width:74ch;margin:clamp(16px,2vw,26px) 0 clamp(24px,3.2vw,40px);padding:0;background:none;border:0;font-size:clamp(14.5px,1.1vw,17px);line-height:1.7;color:var(--dim)}
+
+    .ch-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(20px,2.4vw,36px) clamp(12px,1.6vw,24px);border:0}
+    .ch-row{
+      display:flex;flex-direction:column;align-items:stretch;gap:0;
+      width:100%;padding:0;margin:0;
+      grid-template-columns:none;background:none;border:0;
+      text-align:left;cursor:pointer;transition:none;
+    }
+    .ch-row:hover{background:none}
+    .ch-thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);background:#101011}
+    .ch-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .ch-row:hover .ch-thumb img{transform:scale(1.055)}
+    .ch-num{display:block;margin-top:12px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;line-height:1;color:var(--red);white-space:nowrap}
+    .ch-title{
+      display:block;margin-top:7px;overflow:visible;
+      font-family:var(--display);font-weight:400;font-size:clamp(15.5px,1.28vw,19px);line-height:1.12;letter-spacing:.012em;text-transform:uppercase;
+      white-space:normal;text-overflow:clip;color:var(--ink);
+    }
+    .ch-watch{
+      display:inline-flex;align-items:center;align-self:flex-start;gap:7px;
+      margin-top:11px;padding:0;border:0;
+      font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;
+      color:var(--dim);transition:color .18s;
+    }
+    .ch-watch::after{content:'';border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--red)}
+    .ch-row:hover .ch-watch{color:var(--red)}
+
+    .ep-cta{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px clamp(24px,3.4vw,56px);
+      margin-top:clamp(24px,3vw,42px);padding-top:clamp(18px,2.2vw,26px);
+      border-top:1px solid var(--line);
+    }
+    .ep-cta-note{max-width:58ch;margin:0;font-size:clamp(14px,1.05vw,16.5px);line-height:1.7;color:var(--dim)}
+    .ep-cta-link{
+      display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+      padding:14px 24px;background:var(--red);color:#fff;border:0;
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;white-space:nowrap;
+      transition:background .18s,color .18s;
+    }
+    .ep-cta-link:hover{background:var(--black);color:#fff}
+
+    /* PROTOCOL/ZERO & DREAMINA SPECIAL FEATURE CARDS */
+    .special-card{
+      display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);
+      align-items:center;gap:clamp(22px,3.2vw,58px);
+      width:100%;overflow:hidden;padding:clamp(22px,3.2vw,50px);
+      background:var(--black);border:1px solid rgba(255,255,255,.1);text-align:left;cursor:pointer;transition:border-color .2s;
+    }
+    .special-card:hover{border-color:var(--red)}
+    .special-media{position:relative;align-self:center;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.08)}
+    .special-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.93);transition:filter .4s ease}
+    .special-card:hover .special-media img{filter:brightness(1.02)}
+    .special-body{display:flex;flex-direction:column;justify-content:center;padding:0;color:#f2efe8}
+    .special-kicker{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
+    .special-title{margin-top:clamp(12px,1.5vw,20px);font-family:var(--display);font-size:clamp(30px,3.8vw,64px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase}
+    .special-copy{max-width:56ch;margin-top:clamp(14px,1.8vw,22px);font-size:clamp(13.5px,1vw,15.5px);line-height:1.7;color:#a49f96}
+    .special-watch{
+      display:inline-flex;align-items:center;align-self:flex-start;gap:10px;
+      margin-top:clamp(18px,2.4vw,30px);padding:12px 22px;
+      background:var(--red);color:#fff;border:0;
+      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+      transition:background .18s,color .18s;
+    }
+    .special-watch::after{content:'';border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff}
+    .special-card:hover .special-watch{background:#fff;color:var(--black)}
+    .special-card:hover .special-watch::after{border-left-color:var(--black)}
+
+    /* Alternate special feature grid alignment */
+    #showSections .ep-block:nth-child(3) .special-card{grid-template-columns:minmax(0,1fr) minmax(0,.95fr)}
+    #showSections .ep-block:nth-child(3) .special-media{grid-column:2;grid-row:1}
+    #showSections .ep-block:nth-child(3) .special-body{grid-column:1;grid-row:1}
+
+    /* ============================================================
+       FIELD FEED / INSTAGRAM PANEL (OPTION 1: SEPARATED DOSSIER)
+       ============================================================ */
+    .ig-panel{
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
+      column-gap:clamp(24px,4vw,64px);align-items:center;
+      margin:clamp(44px,6.5vw,88px) 0 0;
+      padding:clamp(24px,3.5vw,50px);
+      background:var(--paper-2);
+      color:var(--ink);
+      border:1px solid var(--line);
+      border-top:3px solid var(--red);
+    }
+    .ig-fig{margin:0;border:1px solid var(--line);background:#000;padding:6px}
+    .ig-fig img{width:100%;height:auto;display:block;object-fit:contain}
+    .ig-body .mono-sm{display:block;font-size:10px;letter-spacing:.26em;color:var(--red);font-weight:700}
+    .ig-title{max-width:15ch;margin-top:10px;font-family:var(--display);font-size:clamp(32px,4.5vw,68px);line-height:.88;letter-spacing:-.015em;text-transform:uppercase;color:var(--ink)}
+    .ig-body p{max-width:54ch;margin-top:14px;font-size:clamp(14px,1.05vw,16px);line-height:1.7;color:var(--dim)}
+    .ig-handle{display:inline-block;margin-top:16px;padding:4px 10px;background:var(--paper);border:1px solid var(--line);font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+    .ig-cta{
+      display:inline-flex;align-items:center;gap:8px;
+      margin-top:18px;padding:12px 24px;
+      background:var(--red);color:#fff;border:0;
+      font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
+      transition:background .18s,color .18s;
+    }
+    .ig-cta:hover{background:var(--black);color:#fff}
+
+    /* ============================================================
+       02 / OVERVIEW & SERIES INTRO (#home)
        ============================================================ */
     #home{
       display:grid;
@@ -234,7 +337,6 @@
       column-gap:clamp(28px,4vw,72px);
       row-gap:clamp(34px,4.6vw,62px);
       align-items:start;
-      padding-top:clamp(50px,7vw,98px)!important;
     }
     .art-head{grid-column:1/-1;grid-row:1;margin:0;padding:0;border:0}
     .art-kicker{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
@@ -255,36 +357,12 @@
     .tag:last-child{margin-right:0;padding-right:0;border-right:0}
     .tag.on{color:var(--red)}
 
-    /* the series data, set as a film credit sheet */
     .infobox{grid-column:1/-1;grid-row:2;margin:0}
-    .ib{
-      display:grid;
-      grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
-      column-gap:clamp(24px,3.6vw,60px);
-      align-items:start;border:0;background:none;
-    }
-    .ib>*{min-width:0}
-    .ib{display:block}
+    .ib{display:block;border:0;background:none}
     .ib-still{min-width:0;width:100%}
     .ib-media{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:0;background:var(--paper-2)}
-    .ib-media img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center}
+    .ib-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
     .ib-cap{padding:11px 0 0;border:0;text-align:left;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
-    .ib-title{padding:0 0 12px;background:none;border:0;text-align:left;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
-    .ib-section{padding:16px 0 9px;background:none;border:0;border-top:1px solid var(--line);font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
-    .ib dl{margin:0}
-    .ib .ibrow{display:grid;grid-template-columns:36% minmax(0,1fr);gap:10px;padding:0;border:0;border-bottom:1px solid var(--line-soft)}
-    .ib .ibrow:last-child{border-bottom:0}
-    .ib dt{padding:10px 0;border:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-    .ib dd{padding:10px 0;font-family:var(--display);font-weight:400;font-size:clamp(15px,1.35vw,20px);line-height:1.2;letter-spacing:.015em;text-transform:uppercase;color:var(--ink)}
-    .ib dd.hot{font-family:var(--display);font-size:clamp(15px,1.35vw,20px);text-transform:uppercase;color:var(--red)}
-    .ib-cta{
-      justify-self:start;display:inline-flex;align-items:center;
-      margin:clamp(20px,2.4vw,30px) 0 0;padding:15px 28px;
-      background:var(--red);color:#fff;border:0;
-      font-family:var(--display);font-size:16px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
-      transition:background .18s,color .18s;
-    }
-    .ib-cta:hover{background:var(--black);color:#fff;transform:none}
 
     .notice{
       grid-column:1/-1;grid-row:3;
@@ -294,6 +372,7 @@
     .notice .ico{padding-top:2px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--red)}
     .notice p{max-width:72ch;font-size:14.5px;line-height:1.66;color:var(--dim)}
     .notice p b{color:var(--ink);font-weight:700}
+    .notice p i{font-style:normal;color:var(--ink);font-weight:600}
 
     .prose{font-size:clamp(15px,1.05vw,17px);line-height:1.78;color:var(--ink)}
     .prose p{margin-bottom:1.1em}
@@ -305,12 +384,10 @@
     .rail-note p{font-size:12.5px;line-height:1.68;color:var(--dim)}
 
     /* ============================================================
-       02 / THE WORLD, visual essay
+       03 / THE WORLD
        ============================================================ */
     .figure{margin:0;border:0;background:none}
     .figure img{width:100%;display:block}
-    .figure.sq img{aspect-ratio:auto}
-    .figure.contain{padding:0}
     .figcap{display:flex;justify-content:space-between;gap:12px;padding:11px 0 0;border:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 
     #world .split{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(0,1fr);column-gap:clamp(28px,4.4vw,80px);align-items:start}
@@ -320,7 +397,7 @@
     #world .prose p:first-child{font-size:clamp(18px,1.75vw,27px);line-height:1.42;letter-spacing:-.005em;margin-bottom:1em}
 
     /* ============================================================
-       03 / MAIN AGENTS, full width profile spreads
+       04 / MAIN AGENTS
        ============================================================ */
     #characters>.prose{max-width:none;margin-bottom:clamp(56px,8vw,120px)!important;columns:2;column-gap:clamp(30px,4.4vw,76px);orphans:2;widows:2}
     #characters>.prose p{margin-bottom:1.05em}
@@ -337,13 +414,13 @@
     .char-meta .m.key{color:var(--red)}
     .char-entry p.bio{max-width:52ch;font-size:clamp(14.5px,1.05vw,16.5px);line-height:1.72;color:var(--ink)}
     .char-entry p.bio+p.bio{margin-top:1em}
-    /* second agent mirrors the spread */
+
     #characters .char-entry:last-of-type{grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);align-items:end}
     #characters .char-entry:last-of-type .char-figure{grid-column:2;grid-row:1}
     #characters .char-entry:last-of-type>div{grid-column:1;grid-row:1}
 
     /* ============================================================
-       04 / G.S.I., institutional file
+       05 / G.S.I.
        ============================================================ */
     #gsi .split{display:grid;grid-template-columns:minmax(0,1.34fr) minmax(0,1fr);column-gap:clamp(28px,4.4vw,80px);align-items:start}
     #gsi .prose{max-width:58ch;color:#f2efe8}
@@ -354,7 +431,7 @@
     #gsi .figcap{margin-top:0!important;padding:12px 0 0;border-top:0!important}
 
     /* ============================================================
-       05 / SUPPORTING CAST, directory
+       06 / SUPPORTING CAST
        ============================================================ */
     #supporting .support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(34px,4.8vw,84px);margin:0}
     #supporting .support{display:block;padding:0;border:0;background:none}
@@ -365,148 +442,7 @@
     #supporting .sbio{margin-top:17px;max-width:54ch;font-size:clamp(13.5px,1vw,15.5px);line-height:1.74;color:var(--dim)}
 
     /* ============================================================
-       06 / THREAT INDEX, confrontational
-       ============================================================ */
-    #threats .support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,4.4vw,76px);margin:0}
-    #threats .support{display:block;padding:0;border:0!important;background:none}
-    #threats .support img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;filter:grayscale(1) contrast(1.14) brightness(.84);transition:filter .4s ease}
-    #threats .support:hover img{filter:grayscale(.15) contrast(1.04) brightness(.98)}
-    #threats .sbody{margin-top:20px;padding:17px 0 0;border:0;border-top:2px solid var(--red)}
-    #threats .role{display:block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
-    #threats .sname{margin-top:9px;font-family:var(--display);font-size:clamp(32px,4.6vw,76px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase;color:#f2efe8}
-    #threats .sbio{margin-top:17px;max-width:54ch;font-size:clamp(13.5px,1vw,15.5px);line-height:1.74;color:var(--dim)}
-
-    /* ============================================================
-       07 / EPISODE GUIDE, five across
-       ============================================================ */
-    .ep-block+.ep-block{margin-top:clamp(60px,8vw,128px)}
-    .ep-block-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;padding:0 0 13px;background:none;border:0;border-bottom:1px solid var(--line)}
-    .ep-block-title{font-family:var(--display);font-size:clamp(25px,3.2vw,46px);line-height:.95;letter-spacing:.005em;text-transform:uppercase}
-    .ep-block-count{margin-left:auto;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
-    .ep-note{max-width:74ch;margin:clamp(16px,2vw,26px) 0 clamp(28px,3.6vw,48px);padding:0;background:none;border:0;font-size:clamp(14.5px,1.1vw,17px);line-height:1.7;color:var(--dim)}
-
-    .ch-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(20px,2.4vw,36px) clamp(12px,1.6vw,24px);border:0}
-    .ch-row{
-      display:flex;flex-direction:column;align-items:stretch;gap:0;
-      width:100%;padding:0;margin:0;
-      grid-template-columns:none;background:none;border:0;
-      text-align:left;cursor:pointer;transition:none;
-    }
-    .ch-row:hover{background:none}
-    .ch-thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;border:0;background:#101011}
-    .ch-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-    .ch-row:hover .ch-thumb img{transform:scale(1.055)}
-    .ch-num{display:block;margin-top:12px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;line-height:1;color:var(--red);white-space:nowrap}
-    .ch-title{
-      display:block;margin-top:7px;overflow:visible;
-      font-family:var(--display);font-weight:400;font-size:clamp(15.5px,1.28vw,19px);line-height:1.12;letter-spacing:.012em;text-transform:uppercase;
-      white-space:normal;text-overflow:clip;color:var(--ink);
-    }
-    .ch-watch{
-      display:inline-flex;align-items:center;align-self:flex-start;gap:7px;
-      margin-top:11px;padding:0;border:0;
-      font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;
-      color:var(--dim);transition:color .18s;
-    }
-    .ch-watch::after{content:'';border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--red)}
-    .ch-row:hover .ch-watch{color:var(--red)}
-
-    .ep-cta{
-      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px clamp(24px,3.4vw,56px);
-      margin-top:clamp(28px,3.6vw,52px);padding-top:clamp(20px,2.4vw,30px);
-      border-top:1px solid var(--line);
-    }
-    .ep-cta-note{max-width:58ch;margin:0;font-size:clamp(14px,1.05vw,16.5px);line-height:1.7;color:var(--dim)}
-    .ep-cta-link{
-      display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
-      padding:15px 26px;background:var(--red);color:#fff;border:0;
-      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;white-space:nowrap;
-      transition:background .18s,color .18s;
-    }
-    .ep-cta-link:hover{background:var(--black);color:#fff}
-
-    /* archive grid, kept wired in case a compact group is added later */
-    .tile-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;border:0}
-    .tile{position:relative;aspect-ratio:16/9;overflow:hidden;padding:0;background:#101011;border:0;outline:0;cursor:pointer}
-    .tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.8);transition:filter .3s ease,transform .3s ease}
-    .tile:hover img{filter:none;transform:scale(1.06)}
-    .tile-num{position:absolute;z-index:2;left:6px;bottom:3px;font-family:var(--display);font-size:15px;color:#fff;text-shadow:0 1px 4px #000}
-    .tile:hover .tile-num{color:var(--red)}
-
-    /* PROTOCOL/ZERO, special film feature */
-    .special-card{
-      display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);
-      align-items:center;gap:clamp(22px,3.2vw,58px);
-      width:100%;overflow:hidden;padding:clamp(22px,3.2vw,56px);
-      background:var(--black);border:0;text-align:left;cursor:pointer;transition:none;
-    }
-    .special-card:hover{background:var(--black);border:0}
-    .special-media{position:relative;align-self:center;width:100%;aspect-ratio:16/9;min-height:0;overflow:hidden;background:#000}
-    .special-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.93);transition:filter .4s ease}
-    .special-card:hover .special-media img{filter:brightness(1.02)}
-    .special-body{display:flex;flex-direction:column;justify-content:center;padding:0;color:#f2efe8}
-    .special-kicker{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
-    .special-title{margin-top:clamp(13px,1.6vw,22px);font-family:var(--display);font-size:clamp(32px,4.2vw,74px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase}
-    .special-copy{max-width:56ch;margin-top:clamp(16px,2vw,26px);font-size:clamp(14px,1.05vw,16.5px);line-height:1.74;color:#a49f96}
-    .special-watch{
-      display:inline-flex;align-items:center;align-self:flex-start;gap:10px;
-      margin-top:clamp(20px,2.6vw,34px);padding:14px 24px;
-      background:var(--red);color:#fff;border:0;
-      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-      transition:background .18s,color .18s;
-    }
-    .special-watch::after{content:'';border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff}
-    .special-card:hover .special-watch{background:#fff;color:var(--black)}
-    .special-card:hover .special-watch::after{border-left-color:var(--black)}
-
-    /* the second special feature mirrors the first */
-    #showSections .ep-block:nth-child(3) .special-card{grid-template-columns:minmax(0,1fr) minmax(0,.95fr)}
-    #showSections .ep-block:nth-child(3) .special-media{grid-column:2;grid-row:1}
-    #showSections .ep-block:nth-child(3) .special-body{grid-column:1;grid-row:1}
-
-    /* ============================================================
-       EXPERIENCE ROUTE, three point sequence
-       ============================================================ */
-    .experience-guide{margin:0;padding:clamp(58px,8vw,124px) var(--edge);background:var(--paper-2);border:0}
-    .experience-head{display:block;gap:0;padding:0;margin:0 0 clamp(38px,5vw,74px);border:0}
-    .experience-kicker{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
-    .experience-title{max-width:15ch;text-wrap:balance;margin-top:clamp(12px,1.6vw,22px);font-family:var(--display);font-size:clamp(36px,6.2vw,102px);line-height:.86;letter-spacing:-.015em;text-transform:uppercase}
-    .experience-route{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
-    .experience-route::before{content:'';position:absolute;top:0;right:0;left:0;height:2px;background:var(--ink)}
-    .route-step{position:relative;padding:clamp(22px,2.6vw,36px) clamp(18px,2.6vw,44px) 0 0;border:0}
-    .route-step+.route-step{padding-left:clamp(18px,2.6vw,44px);border-left:1px solid var(--line)}
-    .route-step:last-child{padding-right:0}
-    .route-node{position:static;display:block;width:auto;height:auto;background:none;font-family:var(--display);font-size:clamp(46px,5.8vw,94px);line-height:.8;letter-spacing:-.025em;color:var(--red)}
-    .route-node::after{display:none;content:none}
-    .route-title{margin-top:clamp(14px,1.8vw,24px);font-family:var(--display);font-size:clamp(19px,2.1vw,30px);line-height:1;letter-spacing:.015em;text-transform:uppercase}
-    .route-copy{max-width:38ch;margin-top:13px;font-size:clamp(13.5px,1vw,15.5px);line-height:1.72;color:var(--dim)}
-
-    /* ============================================================
-       FIELD FEED, closing feature
-       ============================================================ */
-    .ig-panel{
-      display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
-      column-gap:clamp(28px,4.4vw,80px);align-items:center;
-      margin:0;padding:clamp(58px,8vw,124px) var(--edge);
-      background:var(--black);color:#f2efe8;border:0;
-    }
-    .ig-fig{margin:0;border:0}
-    .ig-fig img{width:100%;height:auto;max-width:none;aspect-ratio:auto;object-fit:contain}
-    .ig-body .mono-sm{display:block;font-size:10px;letter-spacing:.3em;color:var(--red)}
-    .ig-title{max-width:14ch;text-wrap:balance;margin-top:clamp(13px,1.8vw,24px);font-family:var(--display);font-size:clamp(38px,6.4vw,108px);line-height:.85;letter-spacing:-.018em;text-transform:uppercase}
-    .ig-body p{max-width:52ch;margin:clamp(18px,2.2vw,30px) 0 0;font-size:clamp(14.5px,1.1vw,17px);line-height:1.74;color:#a49f96}
-    .ig-handle{display:block;margin:clamp(20px,2.4vw,32px) 0 0;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#f2efe8}
-    .ig-cta{
-      display:inline-flex;align-items:center;gap:10px;min-height:0;
-      margin-top:clamp(18px,2vw,26px);padding:16px 28px;
-      background:var(--red);color:#fff;border:0;
-      font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
-      transition:background .18s,color .18s;
-    }
-    .ig-cta:hover{background:#fff;color:var(--black)}
-
-    /* ============================================================
-       STUDIO / LEGAL / FOOT
+       07 / STUDIO & LEGAL
        ============================================================ */
     .studio-name{margin:clamp(14px,2vw,26px) 0 clamp(22px,3vw,38px);font-family:var(--display);font-size:clamp(60px,12.5vw,214px);line-height:.8;letter-spacing:-.025em;text-transform:uppercase;color:var(--ink)}
     #studio .prose{font-size:clamp(15.5px,1.15vw,18px);line-height:1.76;color:var(--dim)}
@@ -524,23 +460,20 @@
     .footer .mono-sm.accent{color:var(--red)}
 
     /* ============================================================
-       RESPONSIVE
+       RESPONSIVE MATRIX
        ============================================================ */
     @media(max-width:1180px){
       :root{--frame:1100px}
       #home{grid-template-columns:minmax(0,1fr) minmax(0,250px)}
-      .ib{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
     }
 
     @media(max-width:1024px){
       .ch-list{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .tile-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
       #home{grid-template-columns:minmax(0,1fr)}
       #home>.prose,.rail-note,.art-head,.infobox,.notice{grid-column:1}
       .rail-note{grid-row:auto;max-width:62ch}
       #home>.prose{grid-row:auto}
       .art-head{grid-row:auto}.infobox{grid-row:auto}.notice{grid-row:auto}
-      .ib{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,40px)}
       .ib-still{max-width:520px}
       #world .split{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,42px)}
       #world .figure,#world .prose{grid-column:1;grid-row:auto}
@@ -558,7 +491,7 @@
       .special-title{font-size:clamp(28px,6.6vw,60px)}
       #showSections .ep-block:nth-child(3) .special-media{grid-column:1;grid-row:1}
       #showSections .ep-block:nth-child(3) .special-body{grid-column:1;grid-row:2}
-      .ig-panel{grid-template-columns:minmax(0,1fr);row-gap:clamp(26px,4vw,40px)}
+      .ig-panel{grid-template-columns:minmax(0,1fr);row-gap:clamp(24px,4vw,36px)}
       .ig-fig{max-width:540px}
     }
 
@@ -566,22 +499,14 @@
       :root{--nav-h:50px}
       .ep-cta{gap:18px}
       .ep-cta-note{max-width:none}
-      .experience-route{grid-template-columns:minmax(0,1fr)}
-      .route-step{padding:clamp(20px,3vw,28px) 0 clamp(20px,3vw,28px)}
-      .route-step+.route-step{padding-left:0;border-left:0;border-top:1px solid var(--line)}
-      .route-copy{max-width:60ch}
-      #threats .support-grid,#supporting .support-grid{gap:clamp(30px,5vw,48px)}
+      #supporting .support-grid{gap:clamp(30px,5vw,48px)}
     }
 
     @media(max-width:640px){
       .ch-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,4vw,26px) clamp(11px,3vw,16px)}
-      .tile-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-      #threats .support-grid{grid-template-columns:minmax(0,1fr)}
-      #threats .support img,#supporting .support img,.char-figure,.ig-fig{max-width:none}
       .art-sub{max-width:none}
-      .ib .ibrow{grid-template-columns:38% minmax(0,1fr)}
       .notice{grid-template-columns:minmax(0,1fr);gap:8px}
-      .experience-title,.ig-title{max-width:none}
+      .ig-title{max-width:none}
       .legal-copy{font-size:12.5px}
       #supporting .support-grid{grid-template-columns:minmax(0,1fr);gap:clamp(32px,6vw,44px)}
     }
@@ -591,13 +516,12 @@
       .opening-video{object-position:68% center}
       .opening-scroll{font-size:9px}
     }
-    @media(max-height:560px) and (orientation:landscape){
-      .opening{min-height:100svh}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
+  <!-- ============================================================
+       00 / OPENING HERO REEL
+       ============================================================ -->
   <section class="opening" aria-label="Sari and Ploy opening reel">
     <video class="opening-video" autoplay muted loop playsinline preload="auto">
       <source src="https://github.com/mxvdxn/mxvdxn.github.io/raw/refs/heads/main/video_files/SARIPLOY_LOOP.mp4" type="video/mp4">
@@ -605,6 +529,7 @@
     <p class="opening-scroll">Scroll to explore</p>
   </section>
 
+  <!-- BREADCRUMB -->
   <div class="breadcrumb">
     <a href="#home">MXVDXN Database</a><span class="sep">/</span>
     <a href="#home">Originals</a><span class="sep">/</span>
@@ -612,6 +537,7 @@
   </div>
 
   <div class="wiki">
+    <!-- STICKY TOP NAV -->
     <aside class="rail" aria-label="Contents">
       <h4>Contents</h4>
       <ul class="toc">
@@ -631,11 +557,14 @@
     </aside>
 
     <main class="article">
-      <!-- 01: WATCH EPISODES & VIDEO CONTENT DI PALING ATAS -->
+      <!-- ============================================================
+           01 / WATCH EPISODES & VIDEOS (AT THE TOP)
+           ============================================================ -->
       <section class="sec" id="episodes">
         <div class="sec-h"><h2>Watch Episodes</h2><span class="cjk">話数 / EPISODE</span><span class="edit">Season 1&ndash;2</span></div>
         <div id="showSections"></div>
 
+        <!-- SEPARATED INSTAGRAM FIELD FEED PANEL (OPTION 1) -->
         <div class="ig-panel">
           <figure class="ig-fig"><img loading="lazy" decoding="async" src="https://github.com/mxvdxn/mxvdxn.github.io/blob/main/image_files/IMG_SARIPLOY/SP_IG.png?raw=true" alt="Sari &amp; Ploy on Instagram"></figure>
           <div class="ig-body">
@@ -643,12 +572,16 @@
             <h3 class="ig-title">Stay With Them Between Missions.</h3>
             <p>Some moments move the plot. Others reveal who Sari and Ploy are when nobody is briefing them. Follow the field feed for clues, everyday trouble, visual experiments, and small moments that make their world feel lived in.</p>
             <span class="ig-handle">@sariploy.mxvdxn</span>
-            <a class="ig-cta" href="https://www.instagram.com/sariploy.mxvdxn/" target="_blank" rel="noopener noreferrer">Follow the Field Feed ↗</a>
+            <div>
+              <a class="ig-cta" href="https://www.instagram.com/sariploy.mxvdxn/" target="_blank" rel="noopener noreferrer">Follow the Field Feed ↗</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- 02: OVERVIEW & SERIES INTRO -->
+      <!-- ============================================================
+           02 / OVERVIEW & SERIES ENTRY
+           ============================================================ -->
       <section class="sec" id="home">
         <div class="art-head">
           <span class="art-kicker">MXVDXN Originals // Series Entry</span>
@@ -671,7 +604,9 @@
         </div>
       </section>
 
-      <!-- 03: THE WORLD -->
+      <!-- ============================================================
+           03 / THE WORLD
+           ============================================================ -->
       <section class="sec" id="world">
         <div class="sec-h"><h2>The World</h2><span class="cjk">世界 / DUNIA</span></div>
         <div class="split">
@@ -686,7 +621,9 @@
         </div>
       </section>
 
-      <!-- 04: MAIN AGENTS -->
+      <!-- ============================================================
+           04 / MAIN AGENTS
+           ============================================================ -->
       <section class="sec" id="characters">
         <div class="sec-h"><h2>Main Agents</h2><span class="cjk">要員 / AGEN</span></div>
         <div class="prose" style="margin-bottom:6px">
@@ -723,7 +660,9 @@
         </div>
       </section>
 
-      <!-- 05: G.S.I. -->
+      <!-- ============================================================
+           05 / G.S.I.
+           ============================================================ -->
       <section class="sec" id="gsi">
         <div class="sec-h"><h2>Garuda Siam Initiative</h2><span class="cjk">機関 / AGENSI</span></div>
         <div class="split">
@@ -739,7 +678,9 @@
         </div>
       </section>
 
-      <!-- 06: SUPPORTING CAST -->
+      <!-- ============================================================
+           06 / SUPPORTING CAST
+           ============================================================ -->
       <section class="sec" id="supporting">
         <div class="sec-h"><h2>Supporting Cast</h2><span class="cjk">支援 / PENDUKUNG</span></div>
         <div class="support-grid two-column">
@@ -781,7 +722,9 @@
         </div>
       </section>
 
-      <!-- 07: STUDIO -->
+      <!-- ============================================================
+           07 / STUDIO
+           ============================================================ -->
       <section class="sec" id="studio">
         <div class="sec-h"><h2>Studio</h2><span class="cjk">制作 / STUDIO</span></div>
         <h3 class="studio-name">MXVDXN</h3>
@@ -790,7 +733,9 @@
         </div>
       </section>
 
-      <!-- 08: LEGAL NOTICE -->
+      <!-- ============================================================
+           08 / LEGAL NOTICE
+           ============================================================ -->
       <section class="sec" id="legal">
         <div class="sec-h"><h2>Legal Notice</h2></div>
         <div class="legal-copy">
@@ -816,6 +761,7 @@
     <span class="mono-sm accent">// MXVDXN Database</span>
   </footer>
 
+  <!-- MODAL VIDEO PLAYER (UNTOUCHED LOGIC) -->
   <div class="player-modal" id="playerModal" aria-hidden="true" style="position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(18px,5vw,72px);background:rgba(4,6,6,.9);backdrop-filter:blur(12px)">
     <div class="player-dialog" role="dialog" aria-modal="true" aria-label="Video player" style="position:relative;width:min(1120px,100%);background:#000;border:1px solid var(--accent)">
       <button class="player-close" id="playerClose" type="button" style="position:absolute;z-index:2;right:0;top:0;transform:translateY(-100%);min-width:104px;height:40px;border:1px solid var(--accent);border-bottom:0;background:var(--bg);color:var(--accent);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer">Close</button>
